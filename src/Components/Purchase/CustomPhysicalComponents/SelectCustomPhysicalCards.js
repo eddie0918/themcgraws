@@ -36,7 +36,14 @@ export default class SelectCustomPhysicalCards extends React.Component {
     const { cardType, quantityChanged } = this.state
     return (
       <div className="mb-4">
-        <div className="text-center pt-4 pb-2 white-background top-radius"><h3><u>{cardType.CardTypeName}</u></h3></div>
+        <Row className="white-background">
+          <Col xs="12" lg="4" className="white-background bottom-left-radius">
+            <div className="text-center pt-4 pb-2"><h3><u>{cardType.CardTypeName}</u></h3></div>
+          </Col>
+          <Col xs="12" lg="8" className="white-background bottom-right-radius">
+            <div className="text-center pt-4 pb-2"><h6>Dementions of customizable area: <b>{cardType.DenominationDescription}</b></h6></div>
+          </Col>
+        </Row>
         <div>
           <Container>
             <Row className="white-background">
@@ -95,12 +102,14 @@ export default class SelectCustomPhysicalCards extends React.Component {
                             </Badge>
                       </div>} */}
                   </InputGroup>
-                  <Col check xs="12" >
-                    <input type="radio" value="0" checked={cardType.Type === "0"} onChange={this.updateType} /> One Color Customization
-                  </Col>
-                  <Col xs="12">
-                    <input type="radio" value="1" checked={cardType.Type === "1"} onChange={this.updateType} /> Multi-color Customization
-                  </Col>
+                  <Row inline="true" className="justify-content-center px-1">
+                    <Col xs="11">
+                      <input type="radio" value="0" checked={cardType.Type === "0"} onChange={this.updateType} /> One Color Customization
+                    </Col>
+                    <Col xs="11">
+                      <input type="radio" value="1" checked={cardType.Type === "1"} onChange={this.updateType} /> Multi-color Customization
+                    </Col>
+                  </Row>
 
                   <Row className="w-100 m-1 white-background">
                     <Col sm={{ size: 'auto' }} className="w-100 text-center white-background">
