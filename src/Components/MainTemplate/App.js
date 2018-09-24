@@ -8,14 +8,14 @@ import Footer from './Footer';
 import Main from './Main';
 
 export default class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <Header />
-                <NavigationBar />
-                <Main />
-                <Footer />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <NavigationBar />
+        <Main />
+        <Footer />
+      </div>
+    );
+  }
 }

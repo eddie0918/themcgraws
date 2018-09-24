@@ -27,10 +27,10 @@ export default class StationeryPreviewModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Preview of physical card stationery</ModalHeader>
           <ModalBody>
-	   <img src={StationeryPreview} alt="Preview of physical card stationery" className="w-100" />
+            <img src={StationeryPreview} alt="Preview of physical card stationery" className="w-100" />
           </ModalBody>
           <ModalFooter>
-	   <p>Physical cards are sent with information about the order printed on matching stationery.</p>
+            <p>Physical cards are sent with information about the order printed on matching stationery.</p>
           </ModalFooter>
         </Modal>
       </div>

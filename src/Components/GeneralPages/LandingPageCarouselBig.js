@@ -9,10 +9,10 @@ import {
 
 const items = [
   {
-    src: '/temp/slider1.jpg', caption:''
+    src: '/temp/slider1.jpg', caption: ''
   },
   {
-    src: '/temp/slider2.jpg', caption:''
+    src: '/temp/slider2.jpg', caption: ''
   }
 ];
 
