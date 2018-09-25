@@ -71,6 +71,19 @@ button.btn.btn-block.btn-outline-secondary {
     border-color: #1B2127;
 }
 
+.btn-elegant-gray {
+    color: #fafafa !important;
+    background: rgb(115, 114, 100) !important;
+    border-color: rgb(115, 114, 100) !important;
+}
+
+.btn-elegant-gray:not(:disabled):not(.disabled):active, .btn-elegant-gray:not(:disabled):not(.disabled).active, .show>.btn-elegant-gray.dropdown-toggle, .btn-elegant-gray:hover {
+    color: #fafafa !important;
+    background: rgb(115, 114, 100) !important;
+    background-color: rgb(115, 114, 100) !important;
+    border-color: rgb(115, 114, 100);
+}
+
 .alert-primary {
     color: #fafafa;
     background: #e89d18;

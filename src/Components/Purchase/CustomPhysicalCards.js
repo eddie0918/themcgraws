@@ -9,7 +9,6 @@ export default class CustomPhysicalCards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: '1',
       cardTypesList: [],
       cartShipToMe: [],
       originalCartShipToMe: []
@@ -23,7 +22,7 @@ export default class CustomPhysicalCards extends React.Component {
     //   cartShipToMe = physicalCardCartResponse.Succeeded ? physicalCardCartResponse.ShipToMeDonations : [],
     //   originalCartShipToMe = clone(cartShipToMe);
     // this.setState({ cardTypesList, cartShipToMe, originalCartShipToMe });
-    this.setState({cardTypesList: CustomPhysicalCardTypesList, cartShipToMe: [], originalCartShipToMe: []})
+    this.setState({ cardTypesList: CustomPhysicalCardTypesList, cartShipToMe: [], originalCartShipToMe: [] })
   }
 
   updateShipToMe = (cardTypeId, denomination, quantity) => {
@@ -47,21 +46,16 @@ export default class CustomPhysicalCards extends React.Component {
           </Row>
           <Row className="ml-3 mr-0">
             <Col sm="12">
-            <section>
-              <Container>
-                <Row>
-                  <div>
-                    {this.state.cardTypesList.map((cardType, index) =>
-                      <SelectCustomPhysicalCards
-                        key={index}
-                        cardType={cardType}
-                        // cardsInCart={this.state.cartShipToMe}
-                        // originalCartShipToMe={this.state.originalCartShipToMe}
-                        // updateCardQuantity={this.updateShipToMe}
-                        // updateCart={this.updateCartShipToMe}
-                      />
-                    )}
-
+              <section>
+                <Container>
+                  <Row>
+                    <div>
+                      {this.state.cardTypesList.map((cardType, index) =>
+                        <SelectCustomPhysicalCards
+                          key={index}
+                          cardType={cardType}
+                        />
+                      )}
                     </div>
                   </Row>
                 </Container>
