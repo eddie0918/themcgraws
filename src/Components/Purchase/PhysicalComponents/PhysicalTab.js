@@ -127,7 +127,13 @@ export default class PhysicalTab extends React.Component {
                 <p>Choose to add cards for each recipient individually or multiple recipients at once.</p>
               </Col>
               <Col sm="12">
-                <PhysicalNestedTab cardTypesList={this.state.cardTypesList} />
+                <PhysicalNestedTab
+                  cardTypesList={this.state.cardTypesList}
+                  cardsInCart={this.state.cartShipToMe}
+                  originalCartShipToMe={this.state.originalCartShipToMe}
+                  updateCardQuantity={this.updateShipToMe}
+                  updateCart={this.updateCartShipToMe}
+                />
               </Col>
               <Col sm="12">
                 <PhysicalToggle />

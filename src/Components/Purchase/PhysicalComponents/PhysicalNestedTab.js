@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import SelectPhysicalCards from './SelectPhysicalCards';
 import PhysicalShippingToRecipientForm from './PhysicalShippingToRecipientForm';
 
 
@@ -22,6 +23,7 @@ export default class PhysicalNestedTab extends React.Component {
     }
   }
   render() {
+    const { cardTypesList, cardsInCart, originalCartShipToMe, updateCardQuantity, updateCart } = this.props
     return (
       <div className="row tab-nested ml-1">
         <Row className="w-100">
@@ -53,15 +55,20 @@ export default class PhysicalNestedTab extends React.Component {
                   <h4 className=".d-inline-block float-left vertical-align purchase-step-title underline-title">Select Cards & Add To Cart</h4></div>
               </Col>
               <Col sm="12">
-                Insert new component for Ship to Recipient Cards
-	            </Col>
+                <SelectPhysicalCards
+                  cardTypesList={cardTypesList}
+                  cardsInCart={cardsInCart}
+                  originalCartShipToMe={originalCartShipToMe}
+                  updateCardQuantity={updateCardQuantity}
+                  updateCart={updateCart} />
+              </Col>
               <Col sm="12" className="mb-3">
                 <div className="h-100"><Button color="primary" className=".d-inline-block float-left vertical-align btn btn-primary btn-icon-only rounded-circle no-hover">
                   <span className="btn-inner--icon"><i className={`fa fa-truck`} /></span></Button>
                   <h4 className=".d-inline-block float-left vertical-align purchase-step-title underline-title">Shipping Information</h4></div>
               </Col>
               <Col sm="12">
-                <PhysicalShippingToRecipientForm cardTypesList={this.props.cardTypesList} />
+                <PhysicalShippingToRecipientForm cardTypesList={cardTypesList} />
               </Col>
             </Row>
           </TabPane>

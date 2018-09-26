@@ -40,7 +40,7 @@ export default class SelectPhysicalCards extends React.Component {
                                 <InputGroupAddon addonType="prepend">
                                   <InputGroupText style={{ width: "5.8em" }}>
                                     ${parseInt(denom.Denomination, 10)}.00
-                                                                </InputGroupText>
+                                  </InputGroupText>
                                 </InputGroupAddon>
                                 <input
                                   defaultValue={quantity}
@@ -59,7 +59,7 @@ export default class SelectPhysicalCards extends React.Component {
                                   <div>
                                     <Badge color="secondary">
                                       Only {denom.Stock} cards left
-                                                                    </Badge>
+                                    </Badge>
                                   </div>}
                               </InputGroup>
                             </div>;

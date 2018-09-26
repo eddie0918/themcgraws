@@ -1,12 +1,13 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
-import { Step1, Step2, Step3, Step4 } from './DigitalComponents'
-import { get, post } from '../../Code/IApi';
-import { clone } from '../../Code/Utilities';
-import { CustomPhysicalCardTypesList } from '../MockData'
-import PropTypes from 'prop-types';
+import styled from 'styled-components'
+import { Button, Row, Col, Card, CardHeader, CardBody, CardImg } from 'reactstrap';
+import { OccasionsList, CardDesignList, CardBackgroundSchemesList } from '../MockData'
+import MainSection from '../MainTemplate/MainSection'
+import MainPage from '../MainTemplate/MainPage'
+import CardDetailForm from './DigitalComponents/CardDetailForm'
 import { withStyles } from '@material-ui/core/styles';
-import { Stepper, Step, StepLabel, StepContent, StepIcon, Paper, Typography } from '@material-ui/core';
+import { Chip } from '@material-ui/core';
+import DoneIcon from '@material-ui/icons/Done';
 
 const styles = theme => ({
   root: {
@@ -23,9 +24,9 @@ class DigitalCards extends React.Component {
     this.state = {
       activeStep: 0,
       card: {
-        occasion: null,
-        design: null,
-        scheme: null
+        occasion: OccasionsList[0],
+        design: CardDesignList[0],
+        scheme: CardBackgroundSchemesList[0]
       }
     };
   }
@@ -58,46 +59,69 @@ class DigitalCards extends React.Component {
     const { activeStep, card } = this.state;
     console.log('active step', activeStep)
     return (
-      <section>
-        <Container>
-          <Row>
-            <Col xs="12" className="justify-content-center text-center mt-4 mb-2">
-              <h1>Digital Cards</h1>
-            </Col>
-            <Col xs="12" md={{ size: 8, offset: 2 }} className="justify-content-center mb-2 text-center">
-              <p>You can have cards shipped to you for in-person giving or shipped directly to the recipient. Want to order in bulk? Use our Custom Physical Cards page.</p>
-            </Col>
+      <MainPage
+        title='Digital Cards'
+        description={<p>You can have cards shipped to you for in-person giving or shipped directly to the recipient. Want to order in bulk? Use our Custom Physical Cards page.</p>}
+      >
+        <MainSection title="Choose the occasion" icon="list">
+          <div class="form-panel mx-5 container-fluid">
+            {OccasionsList.map((type, index) => {
+              return (
+                <Chip
+                  key={index}
+                  label={type}
+                  onClick={() => this.updateCard({ key: 'occasion', value: type})}
+                  className="m-1"
+                  icon={type == this.state.card.occasion ? <DoneIcon /> : null}
+                />
+              )
+            })}
+          </div>
+        </MainSection>
+        <MainSection title="Choose a card image" icon="list">
+          <Row className="form-panel mx-5 container-fluid">
+            {CardDesignList.map((design, index) => {
+              return (
+                <Col key={index} xs="6" sm="3" className="my-3">
+                  <Card>
+                    <CardImg width="100%" src={design.ImageUrl} alt="Card image cap" onClick={() => this.updateCard({ key: 'design', value: design})} />
+                  </Card>
+                </Col>
+              )
+            })}
           </Row>
-          <Row className="ml-3 mr-0">
-            <Col sm="12">
-              <section>
-                <Container>
-                  <Row>
-                    <div className={classes.root}>
-                      <Stepper activeStep={activeStep} orientation="vertical">
-                        <Step1 value={card.occasion} updateCard={this.updateCard} nextStep={this.handleNext} />
-                        <Step2 value={card.design} updateCard={this.updateCard} nextStep={this.handleNext} backStep={this.handleBack} />
-                        <Step3 value={card.scheme} updateCard={this.updateCard} nextStep={this.handleNext} backStep={this.handleBack} />
-                        <Step4 card={card} completed={activeStep === 3} nextStep={this.handleNext} backStep={this.handleBack} />
-                      </Stepper>
-                      {activeStep === 5 && (
-                        <Paper square elevation={0} className={classes.resetContainer}>
-                          <Typography>All steps completed - you&quot;re finished</Typography>
-                          <Button onClick={this.handleReset}>
-                            Reset
-                        </Button>
-                        </Paper>
-                      )}
-                    </div>
-                  </Row>
-                </Container>
-              </section>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+        </MainSection>
+        <MainSection title="Choose a card background scheme" icon="list">
+          <div class="form-panel mx-5 container-fluid">
+            {CardBackgroundSchemesList.map((scheme, index) => {
+              return (
+                <ColorButton className="m-1" color={scheme.color} onClick={() => this.updateCard({ key: 'scheme', value: scheme})}>{scheme.name}</ColorButton>
+              )
+            })}
+          </div>
+        </MainSection>
+        <MainSection title="Preview your card design" icon="list">
+          <div class="form-panel mx-5 container-fluid">
+            <Card style={{ backgroundColor: card.scheme.color, borderColor: card.scheme.color }}>
+              <CardHeader className="text-center">Selected Design: <b>{card.design.id}</b></CardHeader>
+              <CardBody className="p-5" style={{ backgroundColor: card.scheme.color, borderColor: card.scheme.color }}>
+                <img width="100%" src={card.design.ImageUrl} alt="Card image cap" />
+              </CardBody>
+            </Card>
+          </div>
+        </MainSection>
+        <MainSection title="Enter the card details" icon="list">
+          <div class="form-panel mx-5 mb-5 container-fluid">
+            <CardDetailForm />
+          </div>
+        </MainSection>
+      </MainPage>
     )
   }
 }
+
+const ColorButton = styled(Button)`
+  background-color: ${props => props.color} !important
+`
 
 export default withStyles(styles)(DigitalCards);

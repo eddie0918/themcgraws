@@ -226,7 +226,9 @@ a.dropdown-toggle.nav-link a {
     line-height: 1.6 !important;
     padding: .075rem 0 !important;
 }
-#personalInformationState {
+#personalInformationState,
+#deliveryMethodSelect,
+#cardAmountSelect {
     z-index: 4;
 }
 .react-select__control:focus-within {
