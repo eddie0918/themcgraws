@@ -34,7 +34,8 @@ export default class SelectCustomPhysicalCards extends React.Component {
 
   render() {
     const { cardType, quantityChanged } = this.state
-    console.log(cardType.Type)
+    const { id } = this.props
+    console.log(id, cardType.Type)
     return (
       <div className="mb-4">
         <Row className="white-background">
@@ -107,8 +108,7 @@ export default class SelectCustomPhysicalCards extends React.Component {
                     <Col xs="11">
                       <CustomInput
                         type="radio"
-                        id={'one-color'}
-                        name={'shippingTypes'}
+                        id={'one-color' + id}
                         label='One Color Customization'
                         checked={cardType.Type === 0}
                         onChange={() => this.updateType(0)}
@@ -117,8 +117,7 @@ export default class SelectCustomPhysicalCards extends React.Component {
                     <Col xs="11">
                       <CustomInput
                         type="radio"
-                        id={'multi-color'}
-                        name={'shippingTypes'}
+                        id={'multi-color' + id}
                         label='Multi-color Customization'
                         checked={cardType.Type === 1}
                         onChange={() => this.updateType(1)}

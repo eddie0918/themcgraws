@@ -6,7 +6,7 @@ export const CustomPhysicalCardTypesList = [
     "DenominationDescription":"3.375 * 1.25",
     "Denomation":null,
     "Quantity":null,
-    "Type": 0
+    "Type": null
   },
   {
     "PhysicalCardTypeId":3,
@@ -15,7 +15,7 @@ export const CustomPhysicalCardTypesList = [
     "DenominationDescription":"3.375 * 0.75",
     "Denomation":null,
     "Quantity":null,
-    "Type": 0
+    "Type": null
   },
   {
     "PhysicalCardTypeId":7,
@@ -24,7 +24,7 @@ export const CustomPhysicalCardTypesList = [
     "DenominationDescription":"3.375 * 2.15 (plus 1/8\" bleed)",
     "Denomation":null,
     "Quantity":null,
-    "Type": 0
+    "Type": null
   }
 ]
 

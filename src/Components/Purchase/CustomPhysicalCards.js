@@ -39,6 +39,7 @@ export default class CustomPhysicalCards extends React.Component {
                   {this.state.cardTypesList.map((cardType, index) =>
                     <SelectCustomPhysicalCards
                       key={index}
+                      id={cardType.PhysicalCardTypeId}
                       cardType={cardType}
                     />
                   )}

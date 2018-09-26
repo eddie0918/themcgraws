@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
 import StationeryPreviewModal from './StationeryPreviewModal';
 import ShippingTypePicker from './ShippingTypePicker';
 import ShippingAddressForm from './ShippingAddressForm';

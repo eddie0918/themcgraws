@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Row, Col, Button } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 import ShippingTypePicker from './ShippingTypePicker';
 import ShippingAddressForm from './ShippingAddressForm';
 
