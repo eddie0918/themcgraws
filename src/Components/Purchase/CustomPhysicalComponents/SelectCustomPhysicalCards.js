@@ -38,24 +38,24 @@ export default class SelectCustomPhysicalCards extends React.Component {
     console.log(id, cardType.Type)
     return (
       <div className="mb-4">
-        <Row className="white-background">
-          <Col xs="12" lg="4" className="white-background bottom-left-radius">
-            <div className="text-center pt-4 pb-2"><h3><u>{cardType.CardTypeName}</u></h3></div>
+        <Row className="card-background pt-4 pb-2 top-radius mx-0">
+          <Col xs="12" lg="4" className="card-background">
+            <div className="text-center"><h3><u>{cardType.CardTypeName}</u></h3></div>
           </Col>
-          <Col xs="12" lg="8" className="white-background bottom-right-radius">
-            <div className="text-center pt-4 pb-2"><h6>Dementions of customizable area: <b>{cardType.DenominationDescription}</b></h6></div>
+          <Col xs="12" lg="8" className="card-background">
+            <div className="text-center"><h6>Dementions of customizable area: <b>{cardType.DenominationDescription}</b></h6></div>
           </Col>
         </Row>
         <div>
           <Container>
-            <Row className="white-background">
-              <Col xs="12" lg="4" className="white-background bottom-left-radius">
+            <Row className="card-background">
+              <Col xs="12" lg="4" className="card-background bottom-left-radius">
                 <div className="justify-content-center text-center">
                   <img src={cardType.ImageUrl} className="physical-card-images" alt={cardType.CardTypeName} />
                 </div>
               </Col>
-              <Col xs="12" lg="8" className="white-background bottom-right-radius">
-                <Row className="white-background">
+              <Col xs="12" lg="8" className="card-background bottom-right-radius">
+                <Row className="card-background">
                   <InputGroup inline="true" className="justify-content-center px-1">
                     <InputGroupAddon addonType="prepend">
                       <InputGroupText style={{ width: "9em" }}>
@@ -125,8 +125,8 @@ export default class SelectCustomPhysicalCards extends React.Component {
                     </Col>
                   </Row>
 
-                  <Row className="w-100 m-1 white-background">
-                    <Col sm={{ size: 'auto' }} className="w-100 text-center white-background">
+                  <Row className="w-100 m-1 card-background">
+                    <Col sm={{ size: 'auto' }} className="w-100 text-center card-background">
                       <Button
                         color="primary"
                         className="mt-3 mb-4"

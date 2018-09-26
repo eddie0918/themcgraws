@@ -18,24 +18,24 @@ export default class SelectPhysicalCards extends React.Component {
           <div>
             {this.props.cardTypesList.map((cardType, index) =>
               <div className="mb-4" key={index}>
-                <div className="text-center pt-4 pb-2 white-background top-radius"><h3><u>{cardType.CardTypeName}</u></h3></div>
+                <div className="text-center pt-4 pb-2 card-background top-radius"><h3><u>{cardType.CardTypeName}</u></h3></div>
                 <div>
                   <Container>
-                    <Row className="white-background">
-                      <Col xs="12" lg="4" className="white-background bottom-left-radius">
+                    <Row className="card-background">
+                      <Col xs="12" lg="4" className="card-background bottom-left-radius">
                         <div className="justify-content-center text-center">
                           <img src={cardType.ImageUrl} className="physical-card-images" alt={cardType.CardTypeName} />
                           <br />
                           <div className="physical-card-description pb-2" dangerouslySetInnerHTML={{ __html: cardType.Description }} ></div>
                         </div>
                       </Col>
-                      <Col xs="12" lg="8" className="white-background bottom-right-radius">
-                        <Row className="white-background">
+                      <Col xs="12" lg="8" className="card-background bottom-right-radius">
+                        <Row className="card-background">
                           {cardType.Denominations.map((denom, dIndex) => {
                             const cardInCart = this.props.cardsInCart.find(cic =>
                               cic.PhysicalCardTypeId === cardType.PhysicalCardTypeId && cic.Denomination === denom.Denomination),
                               quantity = cardInCart && parseInt(cardInCart.Quantity, 10) ? cardInCart.Quantity : '';
-                            return <div key={dIndex} className="col-12 col-md-6 p-1 white-background">
+                            return <div key={dIndex} className="col-12 col-md-6 p-1 card-background">
                               <InputGroup inline="true" className="justify-content-center px-1" key={dIndex}>
                                 <InputGroupAddon addonType="prepend">
                                   <InputGroupText style={{ width: "5.8em" }}>
@@ -64,8 +64,8 @@ export default class SelectPhysicalCards extends React.Component {
                               </InputGroup>
                             </div>;
                           })}
-                          <Row className="w-100 m-1 white-background">
-                            <Col sm={{ size: 'auto' }} className="w-100 text-center white-background">
+                          <Row className="w-100 m-1 card-background">
+                            <Col sm={{ size: 'auto' }} className="w-100 text-center card-background">
                               <Button
                                 color="primary"
                                 className="mt-3 mb-4"

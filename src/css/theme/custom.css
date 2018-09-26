@@ -150,6 +150,12 @@ a.dropdown-toggle.nav-link a {
 .white-background {
     background: #fafafa !important;
 }
+.card-background {
+    background: #ededed !important;
+}
+.tab-content .card-background {
+    background: #fafafa !important;
+}
 .top-radius {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -477,8 +483,6 @@ section.landing-hero {
     width: calc(100% - 30px);
 }
 
-.tab-content .row {
-}
 .tab-content > .active > .row {
     background: #ededed;
     border-bottom-right-radius: .375rem;
