@@ -614,6 +614,10 @@ section.landing-hero {
     background-color: #ededed;
 }
 
+.panel .row {
+    background: none;
+}
+
 .bottom-column {
     position: relative;
 }
