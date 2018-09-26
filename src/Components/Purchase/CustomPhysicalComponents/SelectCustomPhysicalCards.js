@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Container, Row, Col, InputGroup, InputGroupAddon, InputGroupText, FormGroup, Button
+  Container, Row, Col, InputGroup, InputGroupAddon, InputGroupText, CustomInput, Button
 } from 'reactstrap';
 
 export default class SelectCustomPhysicalCards extends React.Component {
@@ -12,9 +12,9 @@ export default class SelectCustomPhysicalCards extends React.Component {
     }
   }
 
-  updateType = e => {
+  updateType = type => {
     this.setState({
-      cardType: { ...this.state.cardType, Type: e.target.value },
+      cardType: { ...this.state.cardType, Type: type },
     })
   }
   updateQuantity = e => {
@@ -34,6 +34,7 @@ export default class SelectCustomPhysicalCards extends React.Component {
 
   render() {
     const { cardType, quantityChanged } = this.state
+    console.log(cardType.Type)
     return (
       <div className="mb-4">
         <Row className="white-background">
@@ -104,10 +105,24 @@ export default class SelectCustomPhysicalCards extends React.Component {
                   </InputGroup>
                   <Row inline="true" className="justify-content-center px-1">
                     <Col xs="11">
-                      <input type="radio" value="0" checked={cardType.Type === "0"} onChange={this.updateType} /> One Color Customization
+                      <CustomInput
+                        type="radio"
+                        id={'one-color'}
+                        name={'shippingTypes'}
+                        label='One Color Customization'
+                        checked={cardType.Type === 0}
+                        onChange={() => this.updateType(0)}
+                      />
                     </Col>
                     <Col xs="11">
-                      <input type="radio" value="1" checked={cardType.Type === "1"} onChange={this.updateType} /> Multi-color Customization
+                      <CustomInput
+                        type="radio"
+                        id={'multi-color'}
+                        name={'shippingTypes'}
+                        label='Multi-color Customization'
+                        checked={cardType.Type === 1}
+                        onChange={() => this.updateType(1)}
+                      />
                     </Col>
                   </Row>
 

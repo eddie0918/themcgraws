@@ -26,7 +26,7 @@ export default class PhysicalShippingForm extends React.Component {
   render() {
     const { shippingInfo } = this.state;
     return (
-      <Form className="form-panel mb-3">
+      <div className="form-panel mb-3">
         <Row>
           <Col xs="12" md="6">
             <ShippingAddressForm
@@ -53,7 +53,7 @@ export default class PhysicalShippingForm extends React.Component {
             </div>
           </Col>
         </Row>
-      </Form>
+      </div>
     );
   }
 }

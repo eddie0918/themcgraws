@@ -164,6 +164,10 @@ a.dropdown-toggle.nav-link a {
     border: none;
     border-radius: inherit;
 }
+.tab-content .form-panel {
+    background-color: white;
+    margin: 15px;
+}
 .form-panel {
     background-color: #ededed;
     padding: 15px;
@@ -474,9 +478,12 @@ section.landing-hero {
 }
 
 .tab-content .row {
+}
+.tab-content > .active > .row {
     background: #ededed;
     border-bottom-right-radius: .375rem;
     border-bottom-left-radius: .375rem;
+
 }
 
 .tab-content .row.tab-row-first {

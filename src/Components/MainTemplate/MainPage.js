@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { Button, Container, Row, Col } from 'reactstrap';
+import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
+
 export default function MainPage(props) {
   return (
     <section {...props}>

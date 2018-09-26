@@ -23,7 +23,7 @@ export default class PhysicalNestedTab extends React.Component {
   }
   render() {
     return (
-      <div className="row tab-nested  ml-1">
+      <div className="row tab-nested ml-1">
         <Row className="w-100">
           <Col xs="12" className="p-0">
             <Nav tabs className="nav nav-justified nav-pills nav-fill flex-column flex-sm-row">
@@ -54,7 +54,7 @@ export default class PhysicalNestedTab extends React.Component {
               </Col>
               <Col sm="12">
                 Insert new component for Ship to Recipient Cards
-	      </Col>
+	            </Col>
               <Col sm="12" className="mb-3">
                 <div className="h-100"><Button color="primary" className=".d-inline-block float-left vertical-align btn btn-primary btn-icon-only rounded-circle no-hover">
                   <span className="btn-inner--icon"><i className={`fa fa-truck`} /></span></Button>

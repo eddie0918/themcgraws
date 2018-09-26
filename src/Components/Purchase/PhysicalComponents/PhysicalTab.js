@@ -106,28 +106,15 @@ export default class PhysicalTab extends React.Component {
         <TabContent activeTab={this.state.activeTab} className="mb-3" >
           <TabPane tabId="1">
             <Row className="pt-3 pb-3 tab-row-first">
-              {/* <Col sm="12" className="mb-3">
-                <div className="h-100"><Button color="primary" className=".d-inline-block float-left vertical-align btn btn-primary btn-icon-only rounded-circle no-hover">
-                  <span className="btn-inner--icon"><i className={`fa fa-list`} /></span></Button>
-                  <h4 className=".d-inline-block float-left vertical-align purchase-step-title underline-title">Select Cards, Denominations, and Quantity & Add To Cart</h4></div>
-              </Col>
-              <Col sm="12">
-                <SelectPhysicalCards
-                  cardTypesList={this.state.cardTypesList}
-                  cardsInCart={this.state.cartShipToMe}
-                  originalCartShipToMe={this.state.originalCartShipToMe}
-                  updateCardQuantity={this.updateShipToMe}
-                  updateCart={this.updateCartShipToMe} />
-              </Col> */}
               <MainSection title="Select Cards, Denominations, and Quantity & Add To Cart" icon="list">
-              <Col sm="12">
-                <SelectPhysicalCards
-                  cardTypesList={this.state.cardTypesList}
-                  cardsInCart={this.state.cartShipToMe}
-                  originalCartShipToMe={this.state.originalCartShipToMe}
-                  updateCardQuantity={this.updateShipToMe}
-                  updateCart={this.updateCartShipToMe} />
-                  </Col>
+                <Col sm="12">
+                  <SelectPhysicalCards
+                    cardTypesList={this.state.cardTypesList}
+                    cardsInCart={this.state.cartShipToMe}
+                    originalCartShipToMe={this.state.originalCartShipToMe}
+                    updateCardQuantity={this.updateShipToMe}
+                    updateCart={this.updateCartShipToMe} />
+                </Col>
               </MainSection>
               <MainSection title="Shipping Information" icon="truck">
                 <PhysicalShippingForm cardTypesList={this.state.cardTypesList} />
