@@ -228,7 +228,8 @@ a.dropdown-toggle.nav-link a {
 }
 #personalInformationState,
 #deliveryMethodSelect,
-#cardAmountSelect {
+#cardAmountSelect,
+#occasionSelect {
     z-index: 4;
 }
 .react-select__control:focus-within {
