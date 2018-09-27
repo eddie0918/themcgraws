@@ -65,7 +65,14 @@ class DigitalCards extends React.Component {
           <div className="form-panel px-5 container-fluid">
             {CardBackgroundSchemesList.map((scheme, index) => {
               return (
-                <ColorButton key={index} className="m-1" color={scheme.color} onClick={() => this.updateCard({ key: 'scheme', value: scheme})}>{scheme.name}</ColorButton>
+                <ColorButton
+                  key={index}
+                  className="m-1"
+                  color={scheme.value}
+                  onClick={() => this.updateCard({ key: 'scheme', value: scheme})}
+                >
+                  {scheme.label}
+                </ColorButton>
               )
             })}
           </div>

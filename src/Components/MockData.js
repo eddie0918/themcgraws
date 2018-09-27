@@ -103,24 +103,24 @@ export const CardDesignList = [
 
 export const CardBackgroundSchemesList = [
   {
-    name: 'Elegant Gray',
-    color: 'rgb(115, 114, 109)'
+    label: 'Elegant Gray',
+    value: 'rgb(115, 114, 109)'
   },
   {
-    name: 'Gold',
-    color: 'rgb(255, 211, 86)'
+    label: 'Gold',
+    value: 'rgb(255, 211, 86)'
   },
   {
-    name: 'Green',
-    color: 'rgb(0, 117, 21)'
+    label: 'Green',
+    value: 'rgb(0, 117, 21)'
   },
   {
-    name: 'Holiday Red',
-    color: 'rgb(192, 24, 13)'
+    label: 'Holiday Red',
+    value: 'rgb(192, 24, 13)'
   },
   {
-    name: 'Torquoise',
-    color: 'rgb(80, 155, 184)'
+    label: 'Torquoise',
+    value: 'rgb(80, 155, 184)'
   }
 ]
 

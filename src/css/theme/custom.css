@@ -229,7 +229,8 @@ a.dropdown-toggle.nav-link a {
 #personalInformationState,
 #deliveryMethodSelect,
 #cardAmountSelect,
-#occasionSelect {
+#occasionSelect,
+#layoutSelect {
     z-index: 4;
 }
 

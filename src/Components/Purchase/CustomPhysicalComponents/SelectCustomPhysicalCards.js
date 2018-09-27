@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Container, Row, Col, InputGroup, InputGroupAddon, InputGroupText, CustomInput, Button, Modal, ModalHeader, ModalBody, ModalFooter
+  Container, Row, Col, InputGroup, InputGroupAddon, InputGroupText, CustomInput, Button, Modal, ModalHeader, ModalBody
 } from 'reactstrap';
 
 export default class SelectCustomPhysicalCards extends React.Component {

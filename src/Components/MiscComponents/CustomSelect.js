@@ -16,7 +16,7 @@ export default class CustomSelect extends React.Component {
     this.props.onChange(newValue);
   }
   render() {
-    const { name, placeholder, options } = this.props
+    const { name, placeholder, description, options } = this.props
     const selectedOption = options.find(o => o.value === this.state.selectedValue) || null;
 
     return (
@@ -24,7 +24,7 @@ export default class CustomSelect extends React.Component {
         <Select
           name={name}
           id={name}
-          className="form-group has-float-label"
+          className={"form-group has-float-label" + (description ? " mb-0" : null)}
           classNamePrefix="react-select"
           placeholder={placeholder}
           value={selectedOption}
@@ -33,6 +33,7 @@ export default class CustomSelect extends React.Component {
           styles={{ zIndex: 4 }}
         />
         <Label for={name} className="float-label-select">{placeholder}</Label>
+        {description}
       </Fragment>
     );
   }
