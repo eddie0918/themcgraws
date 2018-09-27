@@ -1,15 +1,22 @@
 import React from 'react';
 import {
-  Container, Row, Col, InputGroup, InputGroupAddon, InputGroupText, CustomInput, Button
+  Container, Row, Col, InputGroup, InputGroupAddon, InputGroupText, CustomInput, Button, Modal, ModalHeader, ModalBody, ModalFooter
 } from 'reactstrap';
 
 export default class SelectCustomPhysicalCards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      modal: false,
       quantityChanged: [],
       cardType: this.props.cardType
     }
+  }
+
+  toggleModal = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   updateType = type => {
@@ -50,9 +57,15 @@ export default class SelectCustomPhysicalCards extends React.Component {
           <Container>
             <Row className="card-background">
               <Col xs="12" lg="4" className="card-background bottom-left-radius">
-                <div className="justify-content-center text-center">
-                  <img src={cardType.ImageUrl} className="physical-card-images" alt={cardType.CardTypeName} />
+                <div className="justify-content-center text-center p-3" onClick={this.toggleModal}>
+                  <img src={cardType.ImageUrl} className="w-100" alt={cardType.CardTypeName} />
                 </div>
+                <Modal isOpen={this.state.modal} toggle={this.toggleModal} className={this.props.className}>
+                  <ModalHeader toggle={this.toggleModal}>{cardType.CardTypeName}</ModalHeader>
+                  <ModalBody>
+                    <img src={cardType.ImageUrl} alt="Preview of physical card stationery" className="w-100" />
+                  </ModalBody>
+                </Modal>
               </Col>
               <Col xs="12" lg="8" className="card-background bottom-right-radius">
                 <Row className="card-background">
@@ -132,10 +145,6 @@ export default class SelectCustomPhysicalCards extends React.Component {
                         className="mt-3 mb-4"
                         onClick={this.updateCart}>
                         Add to Cart
-                        {/* {(quantityChanged.find(c => c === cardType.PhysicalCardTypeId) ||
-                          (this.props.originalCartShipToMe.find(c => c.PhysicalCardTypeId === cardType.PhysicalCardTypeId))) ?
-                          'Update Quantities' : 'Add to Cart'
-                        } */}
                       </Button>
                     </Col>
                   </Row>
