@@ -1,8 +1,7 @@
 import React from 'react';
 import { Row, Col, FormGroup, Label, Input, Button } from 'reactstrap';
-// import ShippingTypePicker from './ShippingTypePicker';
-import DeliveryMethodSelect from '../../MiscComponents/DeliveryMethodSelect'
-import CardAmountSelect from '../../MiscComponents/CardAmountSelect'
+import { DeliveryMethodList, AmountList } from '../../MockData'
+import CustomSelect from '../../MiscComponents/CustomSelect'
 
 export default class CardDetailForm extends React.Component {
   constructor(props) {
@@ -29,22 +28,28 @@ export default class CardDetailForm extends React.Component {
         <Row>
           <Col>
             <div className="has-float-label w-50 d-none d-sm-inline-block cc-half-left">
-              <DeliveryMethodSelect
+              <CustomSelect
+                name="deliveryMethodSelect"
+                placeholder="Choose method of delivery"
+                options={DeliveryMethodList}
                 selectedValue={cardInfo.DeliveryMethod}
                 onChange={(selectedMethod) => {
                   cardInfo.DeliveryMethod = selectedMethod;
                   this.setState({ cardInfo: cardInfo });
-                }} />
-              <Label for="deliveryMethodSelect" className="float-label-select">Choose method of delivery</Label>
+                }}
+              />
             </div>
             <div className="has-float-label w-50 d-none d-sm-inline-block cc-half-right">
-              <CardAmountSelect
+              <CustomSelect
+                name="cardAmountSelect"
+                placeholder="Select Amount"
+                options={AmountList}
                 selectedValue={cardInfo.Amount}
                 onChange={(selectedAmount) => {
                   cardInfo.Amount = selectedAmount;
                   this.setState({ cardInfo: cardInfo });
-                }} />
-              <Label for="cardAmountSelect" className="float-label-select">Select Amount</Label>
+                }}
+              />
             </div>
             <FormGroup className="has-float-label d-block">
               <Input type="Date"
@@ -87,8 +92,6 @@ export default class CardDetailForm extends React.Component {
               <Label for="cardMessage">Type mesage</Label>
             </FormGroup>
 
-
-            
             <FormGroup className="has-float-label w-50 d-none d-sm-inline-block cc-half-left">
               <Input type="text"
                 name="recipientFirstName"

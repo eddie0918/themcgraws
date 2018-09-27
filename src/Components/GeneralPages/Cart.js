@@ -57,6 +57,7 @@ export default class Cart extends Component {
     return(
       <MainPage className='cart' title='Shopping Cart & Checkout'>
         <MainSection title="Select Cards, Denominations, and Quantity & Add To Cart" icon="check">
+        <Row>
           <Col sm="12">
             <div>{this.state.shoppingCartItems.map(item =>
               <div className="panel" key={item.ItemIndex}>
@@ -146,6 +147,7 @@ export default class Cart extends Component {
               </div>
             </div>
           </Col>
+          </Row>
         </MainSection>
 
         <MainSection

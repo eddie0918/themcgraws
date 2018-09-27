@@ -54,7 +54,7 @@ class DigitalCards extends React.Component {
               return (
                 <Col key={index} xs="6" sm="3" className="my-3">
                   <Card>
-                    <CardImg width="100%" src={design.ImageUrl} alt="Card image cap" onClick={() => this.updateCard({ key: 'design', value: design})} />
+                    <CardImg width="100%" className={card.design === design ? 'border rounded border-5 border-primary' : null} src={design.ImageUrl} alt="Card image cap" onClick={() => this.updateCard({ key: 'design', value: design})} />
                   </Card>
                 </Col>
               )

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
-import StateProvinceSelect from '../../MiscComponents/StateProvinceSelect';
+import CustomSelect from '../../MiscComponents/CustomSelect';
+import { CountryList } from '../../MockData'
 
 export default class ShippingAddressForm extends React.Component {
   constructor(props) {
@@ -125,13 +126,16 @@ export default class ShippingAddressForm extends React.Component {
             <Label for="shippingRecipientCity">City</Label>
           </FormGroup>
           <div className="has-float-label d-block d-sm-none">
-            <StateProvinceSelect
+            <CustomSelect
+              name="personalInformationState"
+              placeholder="State or Province"
+              options={CountryList}
               selectedValue={shippingInfo.ShippingState}
               onChange={(selectedState) => {
                 shippingInfo.ShippingState = selectedState;
                 this.setState({ shippingInfo: shippingInfo });
-              }} />
-            <Label for="personalInformationState" className="float-label-select">State or Province</Label>
+              }}
+            />
           </div>
           <FormGroup className="has-float-label d-block d-sm-none">
             <Input
@@ -176,13 +180,16 @@ export default class ShippingAddressForm extends React.Component {
             <Label for="shippingRecipientCity">City</Label>
           </FormGroup>
           <div className="has-float-label w-50 d-none d-sm-inline-block cc-half-right">
-            <StateProvinceSelect
+            <CustomSelect
+              name="personalInformationState"
+              placeholder="State or Province"
+              options={CountryList}
               selectedValue={shippingInfo.ShippingState}
               onChange={(selectedState) => {
                 shippingInfo.ShippingState = selectedState;
                 this.setState({ shippingInfo: shippingInfo });
-              }} />
-            <Label for="personalInformationState" className="float-label-select">State or Province</Label>
+              }}
+            />
           </div>
           <FormGroup className="has-float-label w-50 d-none d-sm-inline-block cc-half-left">
             <Input

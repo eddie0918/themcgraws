@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
-import StateProvinceSelect from '../../MiscComponents/StateProvinceSelect';
+import CustomSelect from '../../MiscComponents/CustomSelect';
+import { CountryList } from '../../MockData'
 
 export default class billingInformationForm extends React.Component {
 
@@ -31,8 +32,16 @@ export default class billingInformationForm extends React.Component {
             <Label for="billingInformationCity">City</Label>
           </FormGroup>
           <div className="has-float-label d-block d-sm-none">
-            <StateProvinceSelect />
-            <Label for="billingInformationState" className="float-label-select">State or Province</Label>
+            <CustomSelect
+              name="billingInformationState"
+              placeholder="State or Province"
+              options={CountryList}
+              // selectedValue={shippingInfo.ShippingState}
+              // onChange={(selectedState) => {
+              //   shippingInfo.ShippingState = selectedState;
+              //   this.setState({ shippingInfo: shippingInfo });
+              // }}
+            />
           </div>
           <FormGroup className="has-float-label d-block d-sm-none">
             <Input type="text" name="ZIP" id="billingInformationZIP" placeholder="ZIP/Postal Code " />
@@ -55,8 +64,16 @@ export default class billingInformationForm extends React.Component {
             <Label for="billingInformationCity">City</Label>
           </FormGroup>
           <div className="has-float-label w-50 cc-half-right d-none d-sm-inline-block">
-            <StateProvinceSelect />
-            <Label for="billingInformationState" className="float-label-select">State or Province</Label>
+            <CustomSelect
+              name="billingInformationState"
+              placeholder="State or Province"
+              options={CountryList}
+              // selectedValue={shippingInfo.ShippingState}
+              // onChange={(selectedState) => {
+              //   shippingInfo.ShippingState = selectedState;
+              //   this.setState({ shippingInfo: shippingInfo });
+              // }}
+            />
           </div>
           <FormGroup className="has-float-label w-50 cc-half-left d-none d-sm-inline-block">
             <Input type="text" name="ZIP" id="billingInformationZIP" placeholder="ZIP/Postal Code " />

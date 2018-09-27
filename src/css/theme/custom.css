@@ -232,6 +232,7 @@ a.dropdown-toggle.nav-link a {
 #occasionSelect {
     z-index: 4;
 }
+
 .react-select__control:focus-within {
     background-color: #f3f4f5 !important;
 }
@@ -656,3 +657,6 @@ section.landing-hero {
     margin: .375rem;
 }
 
+.border-5 {
+    border-width: 5px !important;
+}

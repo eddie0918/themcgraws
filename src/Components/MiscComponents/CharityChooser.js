@@ -61,7 +61,9 @@ export default class CharityChooser extends Component {
             classNamePrefix="react-select"
             placeholder={this.props.categoryListPlaceholder}
             options={this.state.categoryList.map(c => { return { value: c.CategoryId, label: c.CategoryName }; })}
-          /></div>}
+          />
+        </div>
+      }
     </div>;
   }
 }
