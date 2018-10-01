@@ -40,6 +40,6 @@ export default class CustomSelect extends React.Component {
 }
 
 CustomSelect.propTypes = {
-  selectedValue: PropTypes.string,
+  // selectedValue: PropTypes.string,
   onChange: PropTypes.func.isRequired
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components'
-import { Button, Label, Row, Col, Card, CardHeader, CardBody, CardImg, CustomInput, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Row, Col, Card, CardHeader, CardBody, CardImg, CustomInput, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { OccasionsList, CardDesignList, LayoutList, CardBackgroundSchemesList } from '../MockData'
 import MainSection from '../MainTemplate/MainSection'
 import MainPage from '../MainTemplate/MainPage'
@@ -43,7 +42,7 @@ class PrintCards extends React.Component {
             <Row>
               <Col xs="12" md="5">
                 <div className="justify-content-center text-center p-3">
-                  <img src='/images/OccasionSelect.png' className="w-100" />
+                  <img src='/images/PrintableCard.png' className="w-100" />
                 </div>
                 <div className="has-float-label d-block">
                   <CustomSelect
@@ -160,9 +159,5 @@ class PrintCards extends React.Component {
     )
   }
 }
-
-const ColorButton = styled(Button)`
-  background-color: ${props => props.color} !important
-`
 
 export default PrintCards;

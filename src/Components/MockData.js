@@ -139,6 +139,31 @@ export const AmountList = [
   { value: 500, label: '$500.00' }
 ];
 
+export const DonationAmountList = [
+  { value: 2, label: '$2.00' },
+  { value: 3, label: '$3.00' },
+  { value: 5, label: '$5.00' },
+  { value: 10, label: '$10.00' },
+  { value: 15, label: '$15.00' },
+  { value: 18, label: '$18.00' },
+  { value: 20, label: '$20.00' },
+  { value: 25, label: '$25.00' },
+  { value: 35, label: '$35.00' },
+  { value: 36, label: '$36.00' },
+  { value: 50, label: '$50.00' },
+  { value: 75, label: '$75.00' },
+  { value: 100, label: '$100.00' },
+  { value: 150, label: '$150.00' },
+  { value: 180, label: '$180.00' },
+  { value: 200, label: '$200.00' },
+  { value: 250, label: '$250.00' },
+  { value: 500, label: '$500.00' },
+  { value: 750, label: '$750.00' },
+  { value: 1000, label: '$1000.00' },
+  { value: 1800, label: '$1800.00' },
+  { value: 5000, label: '$5000.00' }
+];
+
 export const CountryList = [
   { value: 'AL', label: 'Alabama' },
   { value: 'AK', label: 'Alaska' },
