@@ -55,15 +55,13 @@ export default class HonorCardPreviewTable extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                {type.recipients.length == 0
-                  ? <tr className="text-center">'No Recipients'</tr>
-                  : type.recipients.map((recipient, index) =>
-                    <tr key={index}>
-                      <th scope="row">{index + 1}</th>
-                      <td>{recipient.firstName}</td>
-                      <td>{recipient.lastName}</td>
-                      <td>{recipient.email}</td>
-                    </tr>
+                {type.recipients.map((recipient, index) =>
+                  <tr key={index}>
+                    <th scope="row">{index + 1}</th>
+                    <td>{recipient.firstName}</td>
+                    <td>{recipient.lastName}</td>
+                    <td>{recipient.email}</td>
+                  </tr>
                 )}
               </tbody>
             </Table>

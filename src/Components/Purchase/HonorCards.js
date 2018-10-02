@@ -392,11 +392,6 @@ class HonorCards extends React.Component {
                     <p>Card Detail...</p>
                   </CardBody>
                 </Card>
-                {/* <p className="ml-3 mt-3 font-weight-bold">One sided - Full Page</p>
-                <p className="ml-5">This prints your Card on a single standard letter sized sheet (8.5" * 11"). The printing should be done in portrait mode.</p>
-                <p className="ml-3 mt-3 font-weight-bold">One sided - Card Size</p>
-                <p className="ml-5">This prints your Card on a single card, sized (5.5" * 7.75"). Blank cards of this size can be purchased at many stationary stores.</p> */}
-
               </ModalBody>
             </Modal>
           </div>
