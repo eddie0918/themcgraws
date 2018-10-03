@@ -1,13 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Row, Col, Table, Button, Modal, ModalHeader, ModalBody, Input } from 'reactstrap';
-import { OccasionsList, CardDesignList, LayoutList, CardBackgroundSchemesList, DonationAmountList } from '../MockData'
-import MainSection from '../MainTemplate/MainSection'
+import { Row, Col, Table, Button, Input } from 'reactstrap';
 import MainPage from '../MainTemplate/MainPage'
-import CustomSelect from '../MiscComponents/CustomSelect'
-import AddRecipientsTable from './HonorComponents/AddRecipientsTable'
-import HonorCardPreviewTable from './HonorComponents/HonorCardPreviewTable'
-
 export default class RedemptionCodes extends React.Component {
   constructor(props) {
     super(props);
@@ -106,7 +99,6 @@ export default class RedemptionCodes extends React.Component {
                 </tbody>
               </Table>
               <div className="font-weight-bold d-flex justify-content-end">Grand Total ${total}.00</div>
-
             </Col>
           </Row>
         </div>
