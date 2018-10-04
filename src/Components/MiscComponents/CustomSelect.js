@@ -28,7 +28,7 @@ export default class CustomSelect extends React.Component {
           classNamePrefix="react-select"
           placeholder={placeholder}
           value={selectedOption}
-          onChange={e => this.handleChange(e.value)}
+          onChange={e => this.handleChange(e)}
           options={options}
           styles={{ zIndex: 4 }}
         />

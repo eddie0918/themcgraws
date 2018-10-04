@@ -17,6 +17,12 @@ export default class CharityChooser extends Component {
     };
   }
 
+  handleChange = (newValue) => {
+    console.log('---', newValue)
+    this.setState({ selectedValue: newValue });
+    this.props.onChange(newValue);
+  }
+
   async componentDidMount() {
     let url = 'charity';
     if (this.props.search) {
@@ -50,6 +56,7 @@ export default class CharityChooser extends Component {
         menuIsOpen="true"
         isMulti="true"
         options={this.state.charityList.map(c => { return { value: [c.CharityId, c.CategoryName, c.Locations].join(' '), label: c.CharityName }; })}
+        onChange={e => this.handleChange(e)}
       />
       {this.props.allowSelectWholeCategory &&
         <div>

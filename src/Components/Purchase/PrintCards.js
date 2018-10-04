@@ -76,7 +76,6 @@ class PrintCards extends React.Component {
               <p>Your printed cards will each contain a unique redemption code, enabling the card recipient to select up to three <Link to='#'>charities</Link> they wish to give the funds towards.</p>
               <p>Custom Charity List: You can pre-select a small group of charities to present to clients for designating the funds towards.</p>
             </Row>
-
           </div>
         </MainSection>
         <MainSection className="container-fluid" title="Choose a card image" icon="list">

@@ -20,8 +20,13 @@ export default class ContactInformationForm extends React.Component {
     }
   }
 
+  onChange = () => {
+    const { firstname, lastname, email, phone, mailing, city, state, zip } = this.state;
+    this.props.onChange({ firstname, lastname, email, phone, mailing, city, state, zip })
+  }
+
   render() {
-    const { firstname, lastname, email, phone, mailing, city, state, zip, country } = this.state;
+    const { firstname, lastname, email, phone, mailing, city, state, zip } = this.state;
     return (
       <div>
         <Form>
@@ -31,7 +36,7 @@ export default class ContactInformationForm extends React.Component {
               id="firstname"
               placeholder="First Name"
               defaultValue={firstname}
-              onChange={(e) => this.setState({ firstname: e.target.value }) }
+              onChange={(e) => this.setState({ firstname: e.target.value }, this.onChange) }
             />
             <Label for="firstname">First Name</Label>
           </FormGroup>
@@ -42,7 +47,7 @@ export default class ContactInformationForm extends React.Component {
               id="lastname"
               placeholder="Last Name"
               defaultValue={lastname}
-              onChange={(e) => this.setState({ lastname: e.target.value }) }
+              onChange={(e) => this.setState({ lastname: e.target.value }, this.onChange) }
             />
             <Label for="lastname">Last Name</Label>
           </FormGroup>
@@ -53,7 +58,7 @@ export default class ContactInformationForm extends React.Component {
               id="email"
               placeholder="Email Address"
               defaultValue={email}
-              onChange={(e) => this.setState({ email: e.target.value }) }
+              onChange={(e) => this.setState({ email: e.target.value }, this.onChange) }
             />
             <Label for="email">Email Address</Label>
           </FormGroup>
@@ -64,7 +69,7 @@ export default class ContactInformationForm extends React.Component {
               id="phone"
               placeholder="Phone Number"
               defaultValue={phone}
-              onChange={(e) => this.setState({ phone: e.target.value }) }
+              onChange={(e) => this.setState({ phone: e.target.value }, this.onChange) }
             />
             <Label for="phone">Phone Number</Label>
           </FormGroup>
@@ -75,7 +80,7 @@ export default class ContactInformationForm extends React.Component {
               id="mailing"
               placeholder="Mailing Address"
               defaultValue={mailing}
-              onChange={(e) => this.setState({ mailing: e.target.value }) }
+              onChange={(e) => this.setState({ mailing: e.target.value }, this.onChange) }
             />
             <Label for="mailing">Mailing Address</Label>
           </FormGroup>
@@ -86,7 +91,7 @@ export default class ContactInformationForm extends React.Component {
               id="city"
               placeholder="City"
               defaultValue={city}
-              onChange={(e) => this.setState({ city: e.target.value }) }
+              onChange={(e) => this.setState({ city: e.target.value }, this.onChange) }
             />
             <Label for="city">City</Label>
           </FormGroup>
@@ -96,7 +101,7 @@ export default class ContactInformationForm extends React.Component {
               placeholder="State or Province"
               options={CountryList}
               selectedValue={state}
-              onChange={(selectedState) => this.setState({ state: selectedState }) }
+              onChange={(selectedState) => this.setState({ state: selectedState }, this.onChange) }
             />
           </div>
           <FormGroup className="has-float-label w-50 d-none d-sm-inline-block cc-half-right">
@@ -106,7 +111,7 @@ export default class ContactInformationForm extends React.Component {
               id="zip"
               placeholder="ZIP/Postal Code"
               defaultValue={zip}
-              onChange={(e) => this.setState({ zip: e.target.value }) }
+              onChange={(e) => this.setState({ zip: e.target.value }, this.onChange) }
             />
             <Label for="zip">ZIP/Postal Code</Label>
           </FormGroup>

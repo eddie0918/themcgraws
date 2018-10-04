@@ -1,13 +1,12 @@
 import React from 'react';
-import styled from 'styled-components'
 import { Button, Row, Col, Card, CardHeader, CardBody, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, CustomInput } from 'reactstrap';
-import { MerchatList, OccasionsList, CardDesignList, CardBackgroundSchemesList } from '../MockData'
+import { MerchatList, CountryList } from '../MockData'
 import MainSection from '../MainTemplate/MainSection'
 import MainPage from '../MainTemplate/MainPage'
-import CardDetailForm from './DigitalComponents/CardDetailForm'
 import CustomSelect from '../MiscComponents/CustomSelect'
 import CharityChooser from '../MiscComponents/CharityChooser';
 import ContactInformationForm from './DonateRetailComponents/ContactInformationForm';
+
 
 export default class DonateRetailCard extends React.Component {
   constructor(props) {
@@ -21,10 +20,19 @@ export default class DonateRetailCard extends React.Component {
         cardNumber: '',
         PIN: '',
         cardBalance: '',
-
-        occasion: OccasionsList[0],
-        design: CardDesignList[0],
-        scheme: CardBackgroundSchemesList[0]
+        charities: []
+      },
+      cards: [],
+      personalInfo: {
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone: '',
+        mailing: '',
+        city: '',
+        state: '',
+        zip: '',
+        country: CountryList[0]
       }
     };
   }
@@ -35,14 +43,23 @@ export default class DonateRetailCard extends React.Component {
     });
   }
 
-  updateCard = data => {
-    this.setState({
-      card: { ...this.state.card, [data.key]: data.value }
-    })
-    // this.handleNext() scroll to next step
+  addThisCard = () => {
+    this.setState(prevState => ({
+      cards: prevState.cards.concat(this.state.card),
+      card: {
+        donationOnline: false,
+        merchant: MerchatList[0],
+        mailInDonation: false,
+        cardNumber: '',
+        PIN: '',
+        cardBalance: '',
+        charities: []
+      }
+    }))
   }
+
   render() {
-    const { card } = this.state;
+    const { card, cards, personalInfo } = this.state;
     return (
       <MainPage
         title='Donate Your Card'
@@ -70,7 +87,7 @@ export default class DonateRetailCard extends React.Component {
                     selectedValue={card.merchant}
                     onChange={(selectedMerchant) => {
                       card.merchant = selectedMerchant;
-                      this.setState({ card: card });
+                      this.setState({ card });
                     }}
                   />
                 </div>
@@ -124,10 +141,10 @@ export default class DonateRetailCard extends React.Component {
                     name="cardNumber"
                     id="cardNumber"
                     placeholder="Enter Card Number"
-                    defaultValue={card.cardNumber}
+                    value={card.cardNumber}
                     onChange={(e) => {
                       card.cardNumber = e.target.value;
-                      this.setState({ card: card });
+                      this.setState({ card });
                     }}
                   />
                   <Label for="cardNumber">Enter Card Number</Label>
@@ -145,10 +162,10 @@ export default class DonateRetailCard extends React.Component {
                     name="cardPin"
                     id="cardPin"
                     placeholder="Enter PIN Number"
-                    defaultValue={card.PIN}
+                    value={card.PIN}
                     onChange={(e) => {
                       card.PIN = e.target.value;
-                      this.setState({ card: card });
+                      this.setState({ card });
                     }}
                   />
                   <Label for="cardPin">Enter PIN Number</Label>
@@ -166,10 +183,10 @@ export default class DonateRetailCard extends React.Component {
                     name="cardBalance"
                     id="cardBalance"
                     placeholder="$"
-                    defaultValue={card.cardBalance}
+                    value={card.cardBalance}
                     onChange={(e) => {
                       card.cardBalance = e.target.value;
-                      this.setState({ card: card });
+                      this.setState({ card });
                     }}
                   />
                   <Label for="cardBalance">Enter Card Balance</Label>
@@ -180,19 +197,31 @@ export default class DonateRetailCard extends React.Component {
         </MainSection>
         <MainSection className="container-fluid" title="Choose a Charity" icon="heart">
           <div className="form-panel px-5 container-fluid d-flex flex-wrap">
-            <Col xs="12"  style={{marginBottom: 310}}>
+            <Col xs="12" style={{marginBottom: 310}}>
               <CharityChooser
                 list='all'
                 charityListPlaceholder='Suggested Charity'
                 allowSelectWholeCategory={false}
                 // selectedCharities={this.state.shoppingCart.PreSelectedCharityId}
-                maxNumberOfCharities={1} />
+                maxNumberOfCharities={1}
+                onChange={selectedCharities => {
+                  card.charities = selectedCharities;
+                  this.setState({ card })
+                }}
+              />
             </Col>
           </div>
         </MainSection>
+        <Button
+          color="primary"
+          className="d-none d-md-block m-5"
+          onClick={() => this.addThisCard()}
+        >
+          Add This Card
+        </Button>
         <MainSection className="container-fluid" title="Your Contact Information" icon="list">
           <div className="form-panel px-5 mb-5 container-fluid">
-            <ContactInformationForm contactInfo={{}} />
+            <ContactInformationForm onChange={personalInfo => this.setState({ personalInfo })} />
             <CustomInput
               type="checkbox"
               id="shareDonateCheckbox"
@@ -202,50 +231,90 @@ export default class DonateRetailCard extends React.Component {
         </MainSection>
         <MainSection className="container-fluid" title="Review and Finish" icon="list">
           <div className="form-panel px-5 mb-5 container-fluid">
-            <ContactInformationForm contactInfo={{}} />
-            <CustomInput
-              type="checkbox"
-              id="shareDonateCheckbox"
-              label={<p>Please share my contact info with the charity I am donating to.</p>}
-            />
+            <Row>
+              <Col xs="12" md="7">
+              {cards.map((card, index) =>
+                <Card key={index}>
+                  <CardHeader>Card #{(index + 1)}</CardHeader>
+                  <CardBody>
+                    <Row>
+                      <Col xs="5"><small><p>Merchant:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{card.merchant.label}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Card Number:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{card.cardNumber}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>PIN:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{card.PIN}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Card Balance:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{card.cardBalance}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Charities:</p></small></Col>
+                      <Col xs="7">
+                        {card.charities.map((charity, index) =>
+                          <small key={index}><p><strong>{charity.value}</strong></p></small>
+                        )}
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <small><p><strong>
+                          IMPORTANT: Do not destroy your card until you receive a final verification email from CharityChoice with explicit instructions to do so.
+                        </strong></p></small>
+                      </Col>
+                    </Row>
+                  </CardBody>
+                </Card>
+              )}
+              </Col>
+              <Col xs="12" md="5">
+                <Card>
+                  <CardHeader>Personal Information</CardHeader>
+                  <CardBody>
+                    <Row>
+                      <Col xs="5"><small><p>First Name:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{personalInfo.firstname}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Last Name:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{personalInfo.lastname}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Email:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{personalInfo.email}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Phone:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{personalInfo.phone}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Mailing Address:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{personalInfo.mailing}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>City:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{personalInfo.city}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>State:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{personalInfo.state.label}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Zip:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{personalInfo.zip}</strong></p></small></Col>
+                    </Row>
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
           </div>
         </MainSection>
-        {/* <MainSection className="container-fluid" title="Choose a card background scheme" icon="list">
-          <div className="form-panel px-5 container-fluid">
-            {CardBackgroundSchemesList.map((scheme, index) => {
-              return (
-                <ColorButton
-                  key={index}
-                  className="m-1"
-                  color={scheme.value}
-                  onClick={() => this.updateCard({ key: 'scheme', value: scheme })}
-                >
-                  {scheme.label}
-                </ColorButton>
-              )
-            })}
-          </div>
-        </MainSection>
-        <MainSection className="container-fluid" title="Preview your card design" icon="list">
-          <div className="form-panel px-5 container-fluid">
-            <Card style={{ backgroundColor: card.scheme.color, borderColor: card.scheme.color }}>
-              <CardHeader className="text-center">Selected Design: <b>{card.design.id}</b></CardHeader>
-              <CardBody className="p-5" style={{ backgroundColor: card.scheme.color, borderColor: card.scheme.color }}>
-                <img width="100%" src={card.design.ImageUrl} alt="Card image cap" />
-              </CardBody>
-            </Card>
-          </div>
-        </MainSection>
-        <MainSection className="container-fluid" title="Enter the card details" icon="list">
-          <div className="form-panel px-5 mb-5 container-fluid">
-            <CardDetailForm />
-          </div>
-        </MainSection> */}
       </MainPage>
     )
   }
 }
-
-const ColorButton = styled(Button)`
-  background-color: ${props => props.color} !important
-`
