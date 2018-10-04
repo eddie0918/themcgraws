@@ -661,3 +661,12 @@ section.landing-hero {
 .border-5 {
     border-width: 5px !important;
 }
+
+.merchant-modal-content {
+    height: 600px;
+}
+
+.merchant-modal-content .modal-body {
+    height: 100%;
+    overflow: scroll;
+}
