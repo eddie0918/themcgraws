@@ -1,0 +1,32 @@
+{
+  "name": "next",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://localhost/",
+  "dependencies": {
+    "@material-ui/core": "^3.2.1",
+    "@material-ui/icons": "^3.0.1",
+    "bootstrap-float-label": "^3.0.1",
+    "create-react-class": "^15.6.3",
+    "payment": "^2.3.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-credit-cards": "^0.7.0",
+    "react-dom": "^16.5.2",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "react-select": "^2.1.0",
+    "reactstrap": "^6.5.0",
+    "styled-components": "^3.4.10"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}
