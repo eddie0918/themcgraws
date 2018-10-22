@@ -1,10 +1,6 @@
 import React from 'react';
 import { Row, Col, FormGroup, Label, Input, Button } from 'reactstrap';
-<<<<<<< HEAD
-import { DeliveryMethodList, AmountList } from '../../MiscComponents/Data'
-=======
 import { DeliveryMethodList, AmountList } from '../../MockData'
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 import CustomSelect from '../../MiscComponents/CustomSelect'
 
 export default class CardDetailForm extends React.Component {

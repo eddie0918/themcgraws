@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Card, CardHeader, CardBody, CardImg, CustomInput, Button, Modal, ModalHeader, ModalBody, Input } from 'reactstrap';
-<<<<<<< HEAD
-import { GetCardOccasions, DefaultOccasion, CardDesignList, LayoutList, CardBackgroundSchemesList, DonationAmountList } from '../MiscComponents/Data'
-=======
 import { OccasionsList, CardDesignList, LayoutList, CardBackgroundSchemesList, DonationAmountList } from '../MockData'
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 import MainSection from '../MainTemplate/MainSection'
 import MainPage from '../MainTemplate/MainPage'
 import CustomSelect from '../MiscComponents/CustomSelect'
@@ -15,21 +11,10 @@ import HonorCardPreviewTable from './HonorComponents/HonorCardPreviewTable'
 class HonorCards extends React.Component {
   constructor(props) {
     super(props);
-<<<<<<< HEAD
-    const occasionsList = [],
-      cardDesignList = [];
-    this.state = {
-      occasionsList,
-      cardDesignList,
-      modal: false,
-      card: {
-        occasion: DefaultOccasion,
-=======
     this.state = {
       modal: false,
       card: {
         occasion: OccasionsList[0],
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
         design: CardDesignList[0],
         layout: LayoutList[0],
         scheme: CardBackgroundSchemesList[0],
@@ -47,13 +32,6 @@ class HonorCards extends React.Component {
       }
     };
   }
-<<<<<<< HEAD
-  async componentDidMount() {
-    const occasionsList = await GetCardOccasions();
-    this.setState({ occasionsList });
-  }
-=======
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 
   showPreviewModal = () => {
     this.setState({
@@ -85,21 +63,13 @@ class HonorCards extends React.Component {
             <Row>
               <Col xs="12" md="5">
                 <div className="justify-content-center text-center p-3">
-<<<<<<< HEAD
-                  <img src='/images/HonorCard.gif' className="w-100" alt="Honor Card" />
-=======
                   <img src='/images/HonorCard.gif' className="w-100" />
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                 </div>
                 <div className="has-float-label d-block">
                   <CustomSelect
                     name="layoutSelect"
                     placeholder="Select an occasion for this card..."
-<<<<<<< HEAD
-                    options={this.state.occasionsList.map(o => ({ value: o, label: o.OccasionName }))}
-=======
                     options={OccasionsList}
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                     selectedValue={card.occasion}
                     onChange={(selectedOccasion) => {
                       card.occasion = selectedOccasion;
@@ -417,11 +387,7 @@ class HonorCards extends React.Component {
                   <CardBody className="p-5" style={{ backgroundColor: card.scheme, borderColor: card.scheme }}>
                     <p className="font-weight-bold text-white">{card.greeting}</p>
                     <p className="text-white">[Your name will appear here] made a donation in your honor...</p>
-<<<<<<< HEAD
-                    <img width="100%" src={card.design.ImageUrl} alt="Selected Design" />
-=======
                     <img width="100%" src={card.design.ImageUrl} alt="Card image cap" />
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                     <p className="font-weight-bold text-dark">{card.message}</p>
                     <p>Card Detail...</p>
                   </CardBody>

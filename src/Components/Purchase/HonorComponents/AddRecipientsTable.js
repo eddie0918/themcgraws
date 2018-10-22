@@ -24,11 +24,7 @@ export default class AddRecipientsTable extends React.Component {
             </tr>
           </thead>
           <tbody>
-<<<<<<< HEAD
-            {recipients.length === 0
-=======
             {recipients.length == 0
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
               ? <tr className="text-center">'No Recipients'</tr>
               : recipients.map((recipient, index) =>
                 <tr key={index}>
@@ -37,11 +33,7 @@ export default class AddRecipientsTable extends React.Component {
                   <td>{recipient.lastName}</td>
                   <td>{recipient.email}</td>
                 </tr>
-<<<<<<< HEAD
-              )}
-=======
             )}
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
           </tbody>
         </Table>
         <Col xs="12" md="4">

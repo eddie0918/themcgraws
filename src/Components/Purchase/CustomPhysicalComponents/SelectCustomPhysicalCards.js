@@ -29,15 +29,9 @@ export default class SelectCustomPhysicalCards extends React.Component {
       cardType: { ...this.state.cardType, Quantity: e.target.value },
     })
   }
-<<<<<<< HEAD
-  updateDenomination = e => {
-    this.setState({
-      cardType: { ...this.state.cardType, Denomination: e.target.value },
-=======
   updateDenomation = e => {
     this.setState({
       cardType: { ...this.state.cardType, Denomation: e.target.value },
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
     })
   }
 
@@ -46,28 +40,17 @@ export default class SelectCustomPhysicalCards extends React.Component {
   }
 
   render() {
-<<<<<<< HEAD
-    const { cardType } = this.state
-=======
     const { cardType, quantityChanged } = this.state
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
     const { id } = this.props
     console.log(id, cardType.Type)
     return (
       <div className="mb-4">
         <Row className="card-background pt-4 pb-2 top-radius mx-0">
           <Col xs="12" lg="4" className="card-background">
-<<<<<<< HEAD
-            <div className="text-center"><h3><u>{cardType.CustomPhysicalCardsTypeName}</u></h3></div>
-          </Col>
-          <Col xs="12" lg="8" className="card-background">
-            <div className="text-center"><h6>Dimensions of customizable area: <b>{cardType.CustomAreaSizeText}</b></h6></div>
-=======
             <div className="text-center"><h3><u>{cardType.CardTypeName}</u></h3></div>
           </Col>
           <Col xs="12" lg="8" className="card-background">
             <div className="text-center"><h6>Dementions of customizable area: <b>{cardType.DenominationDescription}</b></h6></div>
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
           </Col>
         </Row>
         <div>
@@ -75,17 +58,10 @@ export default class SelectCustomPhysicalCards extends React.Component {
             <Row className="card-background">
               <Col xs="12" lg="4" className="card-background bottom-left-radius">
                 <div className="justify-content-center text-center p-3" onClick={this.toggleModal}>
-<<<<<<< HEAD
-                  <img src={cardType.ImageUrl} className="w-100" alt={cardType.CustomPhysicalCardsTypeName} />
-                </div>
-                <Modal isOpen={this.state.modal} toggle={this.toggleModal} className={this.props.className}>
-                  <ModalHeader toggle={this.toggleModal}>{cardType.CustomPhysicalCardsTypeName}</ModalHeader>
-=======
                   <img src={cardType.ImageUrl} className="w-100" alt={cardType.CardTypeName} />
                 </div>
                 <Modal isOpen={this.state.modal} toggle={this.toggleModal} className={this.props.className}>
                   <ModalHeader toggle={this.toggleModal}>{cardType.CardTypeName}</ModalHeader>
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                   <ModalBody>
                     <img src={cardType.ImageUrl} alt="Preview of physical card stationery" className="w-100" />
                   </ModalBody>
@@ -100,15 +76,9 @@ export default class SelectCustomPhysicalCards extends React.Component {
                       </InputGroupText>
                     </InputGroupAddon>
                     <input
-<<<<<<< HEAD
-                      defaultValue={cardType.Denomination}
-                      onChange={this.updateDenomination}
-                      id={[cardType.CustomPhysicalCardsTypeName, this.state.type].join(' ')} name={cardType.CustomPhysicalCardsTypeName}
-=======
                       defaultValue={cardType.Denomation}
                       onChange={this.updateDenomation}
                       id={[cardType.CardTypeName, this.state.type].join(' ')} name={cardType.CardTypeName}
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                       type="number"
                       min="0"
                       // max={denom.Stock}
@@ -132,11 +102,7 @@ export default class SelectCustomPhysicalCards extends React.Component {
                     <input
                       defaultValue={cardType.Quantity}
                       onChange={this.updateQuantity}
-<<<<<<< HEAD
-                      id={[cardType.CustomPhysicalCardsTypeName, this.state.type].join(' ')} name={cardType.CustomPhysicalCardsTypeName}
-=======
                       id={[cardType.CardTypeName, this.state.type].join(' ')} name={cardType.CardTypeName}
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                       type="number"
                       min="0"
                       // max={denom.Stock}

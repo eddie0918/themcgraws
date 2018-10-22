@@ -12,17 +12,10 @@ export default class HonorCardPreviewTable extends React.Component {
   render() {
     const { occasion, design, donationAmount, type } = this.props.card
     console.log(this.props.card)
-<<<<<<< HEAD
-    const amount = type.id === 0 ? type.amount : 1
-    const total = '$' + (donationAmount.value * amount) + '.00'
-    const sendingType = type.id === 0 ? 'Print' : 'Email'
-    const sendingDate = type.id === 0 ? 'N/A' : (type.sendNow ? 'Now' : type.sendingDate)
-=======
     const amount = type.id == 0 ? type.amount : 1
     const total = '$' + (donationAmount.value * amount) + '.00'
     const sendingType = type.id == 0 ? 'Print' : 'Email'
     const sendingDate = type.id == 0 ? 'N/A' : (type.sendNow ? 'Now' : type.sendingDate)
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
     return (
       <Row className="mb-3">
         Please review the e-card:

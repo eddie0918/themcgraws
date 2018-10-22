@@ -2,24 +2,6 @@
   "name": "next",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
-  "homepage": "http://localhost/",
-  "dependencies": {
-    "@material-ui/core": "^3.2.1",
-    "@material-ui/icons": "^3.0.1",
-    "bootstrap-float-label": "^3.0.1",
-    "create-react-class": "^15.6.3",
-    "payment": "^2.3.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "react-credit-cards": "^0.7.0",
-    "react-dom": "^16.5.2",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
-    "react-select": "^2.1.0",
-    "reactstrap": "^6.5.0",
-    "styled-components": "^3.4.10"
-=======
   "homepage": "https://localhost/",
   "dependencies": {
     "@material-ui/core": "^3.1.1",
@@ -40,7 +22,6 @@
     "react-select": "^2.0.0",
     "reactstrap": "^6.1.0",
     "styled-components": "^3.4.9"
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
   },
   "scripts": {
     "start": "react-scripts start",
@@ -50,10 +31,6 @@
   },
   "devDependencies": {
     "eslint": "^4.19.1",
-<<<<<<< HEAD
-    "eslint-plugin-react": "^7.11.1"
-=======
     "eslint-plugin-react": "^7.8.2"
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
   }
 }

@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 import CustomSelect from '../../MiscComponents/CustomSelect';
-<<<<<<< HEAD
-import { StatesList } from '../../MiscComponents/Data'
-=======
 import { CountryList } from '../../MockData'
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 
 export default class ShippingAddressForm extends React.Component {
   constructor(props) {
@@ -133,11 +129,7 @@ export default class ShippingAddressForm extends React.Component {
             <CustomSelect
               name="personalInformationState"
               placeholder="State or Province"
-<<<<<<< HEAD
-              options={StatesList}
-=======
               options={CountryList}
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
               selectedValue={shippingInfo.ShippingState}
               onChange={(selectedState) => {
                 shippingInfo.ShippingState = selectedState;
@@ -191,11 +183,7 @@ export default class ShippingAddressForm extends React.Component {
             <CustomSelect
               name="personalInformationState"
               placeholder="State or Province"
-<<<<<<< HEAD
-              options={StatesList}
-=======
               options={CountryList}
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
               selectedValue={shippingInfo.ShippingState}
               onChange={(selectedState) => {
                 shippingInfo.ShippingState = selectedState;

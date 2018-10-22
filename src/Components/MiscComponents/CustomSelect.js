@@ -12,13 +12,8 @@ export default class CustomSelect extends React.Component {
     };
   }
   handleChange = (newValue) => {
-<<<<<<< HEAD
     this.setState({ selectedValue: newValue.value });
     this.props.onChange(newValue.value);
-=======
-    this.setState({ selectedValue: newValue });
-    this.props.onChange(newValue);
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
   }
   render() {
     const { name, placeholder, description, options } = this.props
@@ -33,11 +28,7 @@ export default class CustomSelect extends React.Component {
           classNamePrefix="react-select"
           placeholder={placeholder}
           value={selectedOption}
-<<<<<<< HEAD
           onChange={this.handleChange}
-=======
-          onChange={e => this.handleChange(e)}
->>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
           options={options}
           styles={{ zIndex: 4 }}
         />
