@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { Button, Row, Col } from 'reactstrap';
+=======
+import { Button, Container, Row, Col } from 'reactstrap';
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 import { get, post } from '../../Code/IApi';
 import MainPage from '../MainTemplate/MainPage'
 import MainSection from '../MainTemplate/MainSection'
@@ -16,7 +20,10 @@ export default class Cart extends Component {
     this.removeFromCart = this.removeFromCart.bind(this);
     this.changeItem = this.changeItem.bind(this);
     this.updateShippingInfo = this.updateShippingInfo.bind(this);
+<<<<<<< HEAD
     this.changeSuggestedCharity = this.changeSuggestedCharity.bind(this);
+=======
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
   }
   async componentDidMount() {
     const response = await get('shoppingcart');
@@ -44,6 +51,7 @@ export default class Cart extends Component {
       this.refreshCart(response.ShoppingCart);
     }
   }
+<<<<<<< HEAD
   async changeSuggestedCharity(selectedCharities) {
     const response = await post(selectedCharities && selectedCharities.length
       ? selectedCharities[0]
@@ -52,6 +60,8 @@ export default class Cart extends Component {
       this.refreshCart(response.ShoppingCart);
     }
   }
+=======
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
   refreshCart(shoppingCart) {
     const shoppingCartItems = shoppingCart.Items;
     this.setState({ shoppingCart, shoppingCartItems });
@@ -59,6 +69,7 @@ export default class Cart extends Component {
   render() {
     if (!this.state.shoppingCart) {
       return <LoadingSpinner text='Loading Cart...' />
+<<<<<<< HEAD
     } else if (this.state.shoppingCartItems.length === 0) {
       return <MainPage title='Your Cart is Empty!' />
     }
@@ -156,6 +167,105 @@ export default class Cart extends Component {
                 </div>
               </div>
             </Col>
+=======
+    } else if (this.state.shoppingCartItems.length == 0) {
+      return <MainPage title='Your Cart is Empty!' />
+    }
+
+    return(
+      <MainPage className='cart' title='Shopping Cart & Checkout'>
+        <MainSection title="Select Cards, Denominations, and Quantity & Add To Cart" icon="check">
+        <Row>
+          <Col sm="12">
+            <div>{this.state.shoppingCartItems.map(item =>
+              <div className="panel" key={item.ItemIndex}>
+                <div className="panel-heading pb-1">
+                  <h4>
+                    <u>
+                      Item #{item.ItemIndex + 1} - {item.Type}
+                    </u>
+                  </h4>
+                </div>
+                <div className="panel-body pt-0">
+                  <Row>
+                    <Col xs="12" md="8">
+                      Description: <span className="font-weight-bold">{item.Description}</span>
+                      <br />
+                      Denomination: <span className="font-weight-bold">${item.Denomination.toFixed(2)}</span>
+                      <br />
+                      Quantity: <span className="font-weight-bold">{item.Quantity}</span>
+                      {item.RecipientEmailAddresses.length > 0 &&
+                        <div>
+                          Recipients: <ol>{item.RecipientEmailAddresses.map((address, aIndex) =>
+                            <li key={aIndex}>{address}</li>
+                          )}</ol>
+                        </div>
+                      }
+                      {item.RecipientPhoneNumbers.length > 0 &&
+                        <div>
+                          Recipients: <ol>{item.RecipientPhoneNumbers.map((cel, cIndex) =>
+                            <li key={cIndex}>{cel}</li>
+                          )}</ol>
+                        </div>
+                      }
+                      {item.DiscountPercent > 0 &&
+                        <div>
+                          Discount Percent: <span className="font-weight-bold">{item.DiscountPercent.toFixed(1)}</span>
+                        </div>
+                      }
+                      {needsShippingInfo(item) &&
+                        (item.ShippingInfoText && item.HasCompleteShippingInfo
+                          ? <div>Shipping Details: <span className="font-weight-bold">{item.ShippingInfoText}</span></div>
+                          : <div className="text-secondary mt-3 text-center">This item requires a shipping address. Please complete the form below.</div>)
+                      }
+                      <br />
+                      Subtotal: <span className="font-weight-bold">${item.TotalForCards.toFixed(2)}</span>
+                      <br />
+                    </Col>
+                    <Col xs="12" md="4" className="text-center">
+                      <Button className="cart-btn" onClick={() => this.removeFromCart(item.ItemIndex)}>Remove</Button>
+                      <Button className="cart-btn" color="primary" onClick={() => this.changeItem(item)}>Change</Button>
+                    </Col>
+                  </Row>
+                </div>
+              </div>
+            )}
+            </div>
+            {this.state.shoppingCartItems.find(d => needsShippingInfo(d)) &&
+              <PhysicalShippingForm
+                shippingInfo={this.state.shoppingCart.ShippingInfo}
+                onUpdateShippinginfo={this.updateShippingInfo}
+              />}
+          </Col>
+          <Col xs="12" md="4">
+            <Tip
+              value={this.state.shoppingCart.TotalCostForSKFTip}
+              onChange={shoppingCart => this.refreshCart(shoppingCart)} />
+          </Col>
+          <Col xs="12" md="8">
+            <div className="panel">
+              <div className="panel-heading pb-1">
+                <h4><u>Totals</u></h4>
+              </div>
+              <div className="panel-body pt-0">
+                Total Cost For Cards: <span className="font-weight-bold">${this.state.shoppingCart.TotalCostForCards.toFixed(2)}</span>
+                {this.state.shoppingCartItems.find(d => d.Type === 'Physical Cards') && <div>
+                  <br />
+                  Total Shipping Cost For Physical Cards: <span className="font-weight-bold">${this.state.shoppingCart.TotalShippingCostForPhysicalcards.toFixed(2)}</span>
+                </div>}
+                <br />
+                {this.state.shoppingCartItems.find(d => d.Type === 'Custom Physical Cards') &&
+                  <div>
+                    Total ShippingCost For Custom Physical Cards: <span className="font-weight-bold">${this.state.shoppingCart.TotalShippingCostForCustomPhysicalCards.toFixed(2)}</span>
+                    <br />
+                    Total Extra Charge For Custom Physical Cards: <span className="font-weight-bold">${this.state.shoppingCart.TotalExtraChargeForCustomPhysicalCards.toFixed(2)}</span>
+                  </div>}
+                <br />
+                Grand Total: <span className="font-weight-bold">${this.state.shoppingCart.GrandTotal.toFixed(2)}</span>
+              </div>
+            </div>
+          </Col>
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
           </Row>
         </MainSection>
 
@@ -169,9 +279,14 @@ export default class Cart extends Component {
               list='all'
               charityListPlaceholder='Suggested Charity'
               allowSelectWholeCategory={false}
+<<<<<<< HEAD
               selectedCharities={[this.state.shoppingCart.PreSelectedCharityId]}
               maxNumberOfCharities={1}
               onChange={this.changeSuggestedCharity} />
+=======
+              selectedCharities={this.state.shoppingCart.PreSelectedCharityId}
+              maxNumberOfCharities={1} />
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
           </Col>
         </MainSection>
 

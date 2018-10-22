@@ -1,7 +1,11 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
 import React from 'react';
+<<<<<<< HEAD
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
+=======
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 
 export default class PricingChartModal extends React.Component {
   constructor(props) {

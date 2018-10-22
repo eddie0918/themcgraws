@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Card, CardHeader, CardBody, CardImg, CustomInput, Modal, ModalHeader, ModalBody } from 'reactstrap';
+<<<<<<< HEAD
 import { GetCardOccasions, DefaultOccasion, CardDesignList, LayoutList, CardBackgroundSchemesList } from '../MiscComponents/Data'
+=======
+import { OccasionsList, CardDesignList, LayoutList, CardBackgroundSchemesList } from '../MockData'
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 import MainSection from '../MainTemplate/MainSection'
 import MainPage from '../MainTemplate/MainPage'
 import CardDetailForm from './DigitalComponents/CardDetailForm'
@@ -10,6 +14,7 @@ import CustomSelect from '../MiscComponents/CustomSelect'
 class PrintCards extends React.Component {
   constructor(props) {
     super(props);
+<<<<<<< HEAD
     const occasionsList = [],
       cardDesignList = [];
     this.state = {
@@ -18,17 +23,26 @@ class PrintCards extends React.Component {
       modal: false,
       card: {
         occasion: DefaultOccasion,
+=======
+    this.state = {
+      modal: false,
+      card: {
+        occasion: OccasionsList[0],
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
         design: CardDesignList[0],
         layout: LayoutList[0],
         scheme: CardBackgroundSchemesList[0]
       }
     };
   }
+<<<<<<< HEAD
   async componentDidMount() {
     const occasionsList = await GetCardOccasions();
     this.setState({ occasionsList });
   }
 
+=======
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
   showPrintModal = () => {
     this.setState({
       modal: !this.state.modal
@@ -51,13 +65,21 @@ class PrintCards extends React.Component {
             <Row>
               <Col xs="12" md="5">
                 <div className="justify-content-center text-center p-3">
+<<<<<<< HEAD
                   <img src='/images/PrintableCard.png' className="w-100" alt="Printable cards" />
+=======
+                  <img src='/images/PrintableCard.png' className="w-100" />
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                 </div>
                 <div className="has-float-label d-block">
                   <CustomSelect
                     name="layoutSelect"
                     placeholder="Select an occasion for this card..."
+<<<<<<< HEAD
                     options={this.state.occasionsList.map(o => ({ value: o, label: o.OccasionName }))}
+=======
+                    options={OccasionsList}
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                     selectedValue={card.occasion}
                     onChange={(selectedOccasion) => {
                       card.occasion = selectedOccasion;
@@ -127,10 +149,17 @@ class PrintCards extends React.Component {
                       <p className="ml-5">This prints your Card on a single standard letter sized sheet (8.5" * 11"). The printing should be done in portrait mode.</p>
                       <p className="ml-3 mt-3 font-weight-bold">One sided - Card Size</p>
                       <p className="ml-5">This prints your Card on a single card, sized (5.5" * 7.75"). Blank cards of this size can be purchased at many stationary stores.</p>
+<<<<<<< HEAD
 
                     </ModalBody>
                   </Modal>
 
+=======
+                      
+                    </ModalBody>
+                  </Modal>
+                  
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                 </div>
                 <div className="has-float-label d-block mt-5">
                   <CustomSelect
@@ -151,7 +180,11 @@ class PrintCards extends React.Component {
                 <Card style={{ backgroundColor: card.scheme, borderColor: card.scheme }}>
                   <CardHeader className="text-center">Selected Design: <b>{card.design.id}</b></CardHeader>
                   <CardBody className="p-5" style={{ backgroundColor: card.scheme, borderColor: card.scheme }}>
+<<<<<<< HEAD
                     <img width="100%" src={card.design.ImageUrl} alt="Selected design" />
+=======
+                    <img width="100%" src={card.design.ImageUrl} alt="Card image cap" />
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                   </CardBody>
                 </Card>
               </Col>

@@ -1,7 +1,11 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 import CustomSelect from '../../MiscComponents/CustomSelect';
+<<<<<<< HEAD
 import { StatesList } from '../../MiscComponents/Data'
+=======
+import { CountryList } from '../../MockData'
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 
 export default class billingInformationForm extends React.Component {
 
@@ -35,12 +39,21 @@ export default class billingInformationForm extends React.Component {
             <CustomSelect
               name="billingInformationState"
               placeholder="State or Province"
+<<<<<<< HEAD
               options={StatesList}
             // selectedValue={shippingInfo.ShippingState}
             // onChange={(selectedState) => {
             //   shippingInfo.ShippingState = selectedState;
             //   this.setState({ shippingInfo: shippingInfo });
             // }}
+=======
+              options={CountryList}
+              // selectedValue={shippingInfo.ShippingState}
+              // onChange={(selectedState) => {
+              //   shippingInfo.ShippingState = selectedState;
+              //   this.setState({ shippingInfo: shippingInfo });
+              // }}
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
             />
           </div>
           <FormGroup className="has-float-label d-block d-sm-none">
@@ -67,12 +80,21 @@ export default class billingInformationForm extends React.Component {
             <CustomSelect
               name="billingInformationState"
               placeholder="State or Province"
+<<<<<<< HEAD
               options={StatesList}
             // selectedValue={shippingInfo.ShippingState}
             // onChange={(selectedState) => {
             //   shippingInfo.ShippingState = selectedState;
             //   this.setState({ shippingInfo: shippingInfo });
             // }}
+=======
+              options={CountryList}
+              // selectedValue={shippingInfo.ShippingState}
+              // onChange={(selectedState) => {
+              //   shippingInfo.ShippingState = selectedState;
+              //   this.setState({ shippingInfo: shippingInfo });
+              // }}
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
             />
           </div>
           <FormGroup className="has-float-label w-50 cc-half-left d-none d-sm-inline-block">

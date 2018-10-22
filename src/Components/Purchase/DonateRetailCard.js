@@ -1,11 +1,20 @@
 import React from 'react';
 import { Button, Row, Col, Card, CardHeader, CardBody, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, CustomInput } from 'reactstrap';
+<<<<<<< HEAD
 import { MerchatList, StatesList } from '../MiscComponents/Data'
+=======
+import { MerchatList, CountryList } from '../MockData'
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 import MainSection from '../MainTemplate/MainSection'
 import MainPage from '../MainTemplate/MainPage'
 import CustomSelect from '../MiscComponents/CustomSelect'
 import CharityChooser from '../MiscComponents/CharityChooser';
 import ContactInformationForm from './DonateRetailComponents/ContactInformationForm';
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 export default class DonateRetailCard extends React.Component {
   constructor(props) {
     super(props);
@@ -30,15 +39,27 @@ export default class DonateRetailCard extends React.Component {
         city: '',
         state: '',
         zip: '',
+<<<<<<< HEAD
         country: StatesList[0]
       }
     };
   }
+=======
+        country: CountryList[0]
+      }
+    };
+  }
+
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
   showMerchantListModal = () => {
     this.setState({
       modal: !this.state.modal
     });
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
   addThisCard = () => {
     this.setState(prevState => ({
       cards: prevState.cards.concat(this.state.card),
@@ -53,6 +74,10 @@ export default class DonateRetailCard extends React.Component {
       }
     }))
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
   render() {
     const { card, cards, personalInfo } = this.state;
     return (
@@ -60,12 +85,20 @@ export default class DonateRetailCard extends React.Component {
         title='Donate Your Card'
         description={<p>Welcome to <strong>Donate Your Card,</strong> where you can exchange your store and restaurant gift cards for  a charity donation. You will receive a tax receipt for the entire full value or any unused balance of your card. <br /> Over 1000 charities to choose from!</p>}
       >
+<<<<<<< HEAD
         <MainSection className="container-fluid" title="Choose Gift Card Merchant" icon="list">
+=======
+        <MainSection className="container-fluid" title="Choose Gift Card Machant" icon="list">
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
           <div className="form-panel px-5 container-fluid">
             <Row>
               <Col xs="12" md="5">
                 <div className="justify-content-center text-center p-3">
+<<<<<<< HEAD
                   <img src='/images/DonateRetailCard.png' className="w-100" alt="Merchant retailer cards" />
+=======
+                  <img src='/images/DonateRetailCard.png' className="w-100" />
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                 </div>
               </Col>
               <Col xs="12" md="7">
@@ -97,7 +130,11 @@ export default class DonateRetailCard extends React.Component {
                 >
                   Preview your HonorCard
                 </p>
+<<<<<<< HEAD
                 <Modal contentClassName="merchant-modal-content" isOpen={this.state.modal} toggle={this.showMerchantListModal} className={this.props.className + ' merchant-list-modal'}>
+=======
+                <Modal className="merchant-list-modal" contentClassName="merchant-modal-content" isOpen={this.state.modal} toggle={this.showMerchantListModal} className={this.props.className}>
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                   <ModalHeader toggle={this.showMerchantListModal}>List of Merchants for Physical cards</ModalHeader>
                   <ModalBody>
                     <Card>
@@ -192,7 +229,11 @@ export default class DonateRetailCard extends React.Component {
         </MainSection>
         <MainSection className="container-fluid" title="Choose a Charity" icon="heart">
           <div className="form-panel px-5 container-fluid d-flex flex-wrap">
+<<<<<<< HEAD
             <Col xs="12" style={{ marginBottom: 310 }}>
+=======
+            <Col xs="12" style={{marginBottom: 310}}>
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
               <CharityChooser
                 list='all'
                 charityListPlaceholder='Suggested Charity'
@@ -228,6 +269,7 @@ export default class DonateRetailCard extends React.Component {
           <div className="form-panel px-5 mb-5 container-fluid">
             <Row>
               <Col xs="12" md="7">
+<<<<<<< HEAD
                 {cards.map((card, index) =>
                   <Card key={index}>
                     <CardHeader>Card #{(index + 1)}</CardHeader>
@@ -266,6 +308,46 @@ export default class DonateRetailCard extends React.Component {
                     </CardBody>
                   </Card>
                 )}
+=======
+              {cards.map((card, index) =>
+                <Card key={index}>
+                  <CardHeader>Card #{(index + 1)}</CardHeader>
+                  <CardBody>
+                    <Row>
+                      <Col xs="5"><small><p>Merchant:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{card.merchant.label}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Card Number:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{card.cardNumber}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>PIN:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{card.PIN}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Card Balance:</p></small></Col>
+                      <Col xs="7"><small><p><strong>{card.cardBalance}</strong></p></small></Col>
+                    </Row>
+                    <Row>
+                      <Col xs="5"><small><p>Charities:</p></small></Col>
+                      <Col xs="7">
+                        {card.charities.map((charity, index) =>
+                          <small key={index}><p><strong>{charity.value}</strong></p></small>
+                        )}
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <small><p><strong>
+                          IMPORTANT: Do not destroy your card until you receive a final verification email from CharityChoice with explicit instructions to do so.
+                        </strong></p></small>
+                      </Col>
+                    </Row>
+                  </CardBody>
+                </Card>
+              )}
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
               </Col>
               <Col xs="12" md="5">
                 <Card>

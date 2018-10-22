@@ -4,7 +4,11 @@ import MainPage from '../MainTemplate/MainPage'
 import MainSection from '../MainTemplate/MainSection'
 import SelectCustomPhysicalCards from './CustomPhysicalComponents/SelectCustomPhysicalCards'
 import PricingChartModal from './CustomPhysicalComponents/PricingChartModal'
+<<<<<<< HEAD
 import { GetCustomPhysicalCardTypes } from '../MiscComponents/Data'
+=======
+import { CustomPhysicalCardTypesList } from '../MockData'
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 
 export default class CustomPhysicalCards extends React.Component {
   constructor(props) {
@@ -16,6 +20,7 @@ export default class CustomPhysicalCards extends React.Component {
     };
   }
 
+<<<<<<< HEAD
   async componentDidMount() {
     this.setState({
       cardTypesList: (await GetCustomPhysicalCardTypes()).map(cpc => ({
@@ -30,6 +35,10 @@ export default class CustomPhysicalCards extends React.Component {
       cartShipToMe: [],
       originalCartShipToMe: []
     })
+=======
+  componentDidMount() {
+    this.setState({ cardTypesList: CustomPhysicalCardTypesList, cartShipToMe: [], originalCartShipToMe: [] })
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
   }
 
   updateShipToMe = (cardTypeId, denomination, quantity) => {
@@ -96,7 +105,11 @@ export default class CustomPhysicalCards extends React.Component {
                 {this.state.cardTypesList.map((cardType, index) =>
                   <SelectCustomPhysicalCards
                     key={index}
+<<<<<<< HEAD
                     id={cardType.CustomPhysicalCardsTypeId}
+=======
+                    id={cardType.PhysicalCardTypeId}
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
                     cardType={cardType}
                   />
                 )}

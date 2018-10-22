@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+import React, { Fragment } from 'react';
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 import { Button, Col } from 'reactstrap';
 
 export default function MainSection(props) {

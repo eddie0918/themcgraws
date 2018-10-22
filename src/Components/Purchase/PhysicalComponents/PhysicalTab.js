@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
+=======
+import { Button, TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
+>>>>>>> 3aeedcd62e8ef2f3b3ba1ede0fd866919fb4bef5
 import classnames from 'classnames';
 import PhysicalToggle from './PhysicalToggle';
 import PhysicalNestedTab from './PhysicalNestedTab';
