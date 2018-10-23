@@ -38,7 +38,7 @@ export default class NavigationBar extends React.Component {
               <Link to='/'><span className="nav-link">Home</span></Link>
             </NavItem>
             <NavItem>
-              <Link to='/about'><span className="nav-link">About</span></Link>
+              <Link to='/About'><span className="nav-link">About</span></Link>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
@@ -90,12 +90,12 @@ export default class NavigationBar extends React.Component {
               </DropdownMenu>
             </UncontrolledDropdown>
             <Button className='btn-login' color="link">
-              <Link to='/login'>
+              <Link to='/Login'>
                 <i className={`fa fa-user`} />
                 <span>Login</span>
               </Link>
             </Button>
-            {/* <Link to='/login'><i className={`fa fa-user`} /><Button color="primary" className="d-none d-md-block">Give Gift Cards</Button></Link> */}
+            {/* <Link to='/Login'><i className={`fa fa-user`} /><Button color="primary" className="d-none d-md-block">Give Gift Cards</Button></Link> */}
             {/* <div nav>
                 <i className={`fa fa-user`} /> <span>Login</span>
               </DropdownToggle> */}

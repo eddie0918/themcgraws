@@ -20,7 +20,7 @@ export default function AccountPage(props) {
                 <CardBody>
                   <CardImg top width="100%" src="/images/business_user_edit.png" alt="Card image cap" />
                 </CardBody>
-                <CardFooter className="text-center account-option-text"><Link to='/forgotpw'>Modify my Account</Link></CardFooter>
+                <CardFooter className="text-center account-option-text"><Link to='/Account/UpdateAccount'>Modify my Account</Link></CardFooter>
               </Card>
             </Col>
             <Col xs="12" sm="6" md="4" lg="3">

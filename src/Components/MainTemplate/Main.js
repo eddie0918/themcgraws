@@ -15,15 +15,17 @@ import DonateRetailCard from '../Purchase/DonateRetailCard';
 import OrderConfirmation from '../GeneralPages/OrderConfirmation';
 import LoginPage from '../GeneralPages/LoginPage'
 import AccountPage from '../Account/Account'
+import UpdateAccountPage from '../Account/UpdateAccount';
 
 export default class Main extends Component {
   render() {
     return (
       <Switch>
         <Route exact path='/' component={LandingPage} />
-        <Route exact path='/login' component={LoginPage} />
-        <Route exact path='/account' component={AccountPage} />
-        <Route exact path='/about' component={About} />
+        <Route exact path='/Login' component={LoginPage} />
+        <Route exact path='/Account' component={AccountPage} />
+        <Route exact path='/Account/UpdateAccount' component={UpdateAccountPage} />
+        <Route exact path='/About' component={About} />
         <Route exact path='/Cart' component={Cart} />
         <Route exact path='/Purchase' component={Purchase} />
         <Route exact path='/Purchase/PhysicalCards' component={PhysicalCards} />

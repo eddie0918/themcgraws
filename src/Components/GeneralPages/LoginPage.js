@@ -49,14 +49,14 @@ export default class LoginPage extends React.Component {
     // this.setState({ submitted: true })
     console.log('----login---', this.state.login)
     if (this.formValidation(true)) {
-      this.props.history.push('/account')
+      this.props.history.push('/Account')
     }
   }
   register = () => {
     this.setState({ submitted: true })
     console.log('----register---', this.state.register)
     if (this.formValidation(false)) {
-      this.props.history.push('/account')
+      this.props.history.push('/Account')
     }
   }
   render() {
@@ -110,6 +110,7 @@ export default class LoginPage extends React.Component {
             <Col xs="12" md="7">
               <div className="form-panel p-3 mb-5 container-fluid">
                 <h4 className=".d-inline-block mb-5 vertical-align underline-title">Create an Account...</h4>
+                <p className="mb-3 vertical-align small font-italic">The 'Name' below will appear to the gift receipient, as the donor/purchaser in emails and at redemption...</p>
                 <FormGroup className="has-float-label">
                   <Input
                     name="registerFirstname"
