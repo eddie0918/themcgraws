@@ -4,7 +4,7 @@ import { Button, Col } from 'reactstrap';
 export default function MainSection(props) {
   return (
     <div {...props}>
-      <Col sm="12" className="my-3">
+      <Col sm="12" className="my-3" hidden={!props.title}>
         <div className="d-flex">
           <Button color="primary" className=".d-inline-block float-left vertical-align btn btn-primary btn-icon-only rounded-circle no-hover">
             <span className="btn-inner--icon"><i className={`fa fa-` + props.icon} /></span>

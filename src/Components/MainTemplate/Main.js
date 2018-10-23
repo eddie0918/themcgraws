@@ -13,12 +13,14 @@ import RedemptionCodes from '../Purchase/RedemptionCodes';
 import DirectToCharityDonation from '../Purchase/DirectToCharityDonation';
 import DonateRetailCard from '../Purchase/DonateRetailCard';
 import OrderConfirmation from '../GeneralPages/OrderConfirmation';
+import LoginPage from '../GeneralPages/LoginPage'
 
 export default class Main extends Component {
   render() {
     return (
       <Switch>
         <Route exact path='/' component={LandingPage} />
+        <Route exact path='/login' component={LoginPage} />
         <Route exact path='/about' component={About} />
         <Route exact path='/Cart' component={Cart} />
         <Route exact path='/Purchase' component={Purchase} />

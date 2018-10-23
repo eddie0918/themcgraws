@@ -514,3 +514,11 @@ export const MerchatList = [
   { value: '', label: 'Zara'},
   { value: '', label: 'Zumiez'}
 ]
+
+export const AccountTypeList = [
+  { value: '1', label: 'Corporate and Business'},
+  { value: '2', label: 'Wedding or Bridal'},
+  { value: '3', label: 'Birthday Party'},
+  { value: '4', label: 'Events and Celebration'},
+  { value: '5', label: 'Redemption'},
+]

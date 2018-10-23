@@ -9,7 +9,8 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Button
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -88,7 +89,17 @@ export default class NavigationBar extends React.Component {
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            <UncontrolledDropdown nav inNavbar>
+            <Button className='btn-login' color="link">
+              <Link to='/login'>
+                <i className={`fa fa-user`} />
+                <span>Login</span>
+              </Link>
+            </Button>
+            {/* <Link to='/login'><i className={`fa fa-user`} /><Button color="primary" className="d-none d-md-block">Give Gift Cards</Button></Link> */}
+            {/* <div nav>
+                <i className={`fa fa-user`} /> <span>Login</span>
+              </DropdownToggle> */}
+            {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav>
                 <i className={`fa fa-user`} /> <span>Login</span>
               </DropdownToggle>
@@ -107,7 +118,7 @@ export default class NavigationBar extends React.Component {
                   <NavLink href="#"><i className="fas fa-sign-out-alt text-primary"></i>Sign Out</NavLink>
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> */}
           </Nav>
         </Collapse>
       </Navbar>

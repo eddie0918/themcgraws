@@ -670,3 +670,15 @@ section.landing-hero {
     height: 100%;
     overflow: scroll;
 }
+
+.btn-login {
+    cursor: pointer;
+}
+.btn-login:hover {
+    background: rgba(255, 255, 255, .2);
+    
+}
+.btn-login a {
+    color: white !important;
+    font-size: 16px;
+}
