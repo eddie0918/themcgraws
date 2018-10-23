@@ -28,7 +28,7 @@ export default function AccountPage(props) {
                 <CardBody>
                   <CardImg top width="100%" src="/images/database_down.png" alt="Card image cap" />
                 </CardBody>
-                <CardFooter className="text-center account-option-text"><Link to='/forgotpw'>My Orders</Link></CardFooter>
+                <CardFooter className="text-center account-option-text"><Link to='/Account/MyOrders'>My Orders</Link></CardFooter>
               </Card>
             </Col>
             <Col xs="12" sm="6" md="4" lg="3">

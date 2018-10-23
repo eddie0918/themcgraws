@@ -4,7 +4,7 @@ import { Row, Col, FormGroup, Label, Button, Input, FormFeedback, CustomInput } 
 import MainSection from '../MainTemplate/MainSection'
 import MainPage from '../MainTemplate/MainPage'
 
-export default class UpdateAccountPage extends React.Component {
+export default class MyOrdersPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -149,7 +149,7 @@ export default class UpdateAccountPage extends React.Component {
                 <CustomInput type="checkbox" id="updateNewlaters" label={<span><small>I do not want to receive CharityGiftCertificates.org periodical newslaters</small></span>} />
 
                 <p
-                  className="text-primary my-3 small btn-link"
+                  className="text-primary my-3 small"
                   onClick={() => {
                     register.hasPermissinCode = !register.hasPermissinCode;
                     this.setState({ register, submitted: false });

@@ -16,6 +16,7 @@ import OrderConfirmation from '../GeneralPages/OrderConfirmation';
 import LoginPage from '../GeneralPages/LoginPage'
 import AccountPage from '../Account/Account'
 import UpdateAccountPage from '../Account/UpdateAccount';
+import MyOrdersPage from '../Account/MyOrders'
 
 export default class Main extends Component {
   render() {
@@ -25,6 +26,7 @@ export default class Main extends Component {
         <Route exact path='/Login' component={LoginPage} />
         <Route exact path='/Account' component={AccountPage} />
         <Route exact path='/Account/UpdateAccount' component={UpdateAccountPage} />
+        <Route exact path='/Account/MyOrders' component={MyOrdersPage} />
         <Route exact path='/About' component={About} />
         <Route exact path='/Cart' component={Cart} />
         <Route exact path='/Purchase' component={Purchase} />

@@ -685,3 +685,6 @@ section.landing-hero {
 .account-option-text {
     font-size: 15px;
 }
+.btn-link {
+    cursor: pointer;
+}

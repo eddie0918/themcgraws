@@ -5,13 +5,12 @@ export default function MainPage(props) {
   return (
     <section {...props}>
       {props.history &&
-        <Button
-          color="primary"
-          className="d-md-block m-3"
+        <p
+          className="text-primary m-3 small btn-link"
           onClick={() => props.history.goBack()}
         >
           Back
-        </Button>
+        </p>
       }
       <Container>
         <Row>
