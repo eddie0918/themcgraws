@@ -29,16 +29,35 @@ export default class LoginPage extends React.Component {
     };
   }
   onRecaptchaChanged = value => {
-    console.log(value, '---reCaptcha---')
     this.setState({ recaptcha: value })
+  }
+  formValidation = isLoginForm => {
+    if (isLoginForm) {
+      const { email, password } = this.state.login
+      if (!email || password.length) {
+        return false
+      }
+    } else {
+      const { firstname, lastname, email, password, confirmpw } = this.state.register
+      if (!firstname || !lastname || !email || password.length < 5 || password !== confirmpw) {
+        return false
+      }
+    }
+    return true
   }
   login = () => {
     // this.setState({ submitted: true })
     console.log('----login---', this.state.login)
+    if (this.formValidation(true)) {
+      this.props.history.push('/account')
+    }
   }
   register = () => {
     this.setState({ submitted: true })
     console.log('----register---', this.state.register)
+    if (this.formValidation(false)) {
+      this.props.history.push('/account')
+    }
   }
   render() {
     const { login, register, submitted, recaptcha } = this.state;
@@ -195,8 +214,6 @@ export default class LoginPage extends React.Component {
                 />
                 {/* https://www.npmjs.com/package/react-google-recaptcha */}
                 <ReCAPTCHA
-                  // style={{ display: "inline-block" }}
-                  // ref={this._reCaptchaRef}
                   sitekey='6LcEU3YUAAAAAL4wJmYwD_3IjEC8D-7p-z8qqCDX'
                   onChange={this.onRecaptchaChanged}
                 // asyncScriptOnLoad={this.asyncScriptOnLoad}

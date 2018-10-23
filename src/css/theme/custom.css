@@ -682,3 +682,6 @@ section.landing-hero {
     color: white !important;
     font-size: 16px;
 }
+.account-option-text {
+    font-size: 15px;
+}
