@@ -688,3 +688,9 @@ section.landing-hero {
 .btn-link {
     cursor: pointer;
 }
+
+.option-icon {
+    height: 50px;
+    background-size: auto;
+    object-fit: scale-down;
+}

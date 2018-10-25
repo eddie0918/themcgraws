@@ -17,6 +17,11 @@ import LoginPage from '../GeneralPages/LoginPage'
 import AccountPage from '../Account/Account'
 import UpdateAccountPage from '../Account/UpdateAccount';
 import MyOrdersPage from '../Account/MyOrders'
+import DonationOrdersReportPage from '../Account/DonationOrdersReport'
+import ResendEcardOrdersPage from '../Account/ResendEcardOrders'
+import PrintYourOwnPage from '../Account/PrintYourOwn'
+import GiftRegistryPage from '../Account/GiftRegistry'
+import MySavedBillingInforrmationPage from '../Account/MySavedBillingInforrmation'
 
 export default class Main extends Component {
   render() {
@@ -27,6 +32,11 @@ export default class Main extends Component {
         <Route exact path='/Account' component={AccountPage} />
         <Route exact path='/Account/UpdateAccount' component={UpdateAccountPage} />
         <Route exact path='/Account/MyOrders' component={MyOrdersPage} />
+        <Route exact path='/Account/DonationOrdersReport' component={DonationOrdersReportPage} />
+        <Route exact path='/Account/ResendEcardOrders' component={ResendEcardOrdersPage} />
+        <Route exact path='/Account/PrintYourOwn' component={PrintYourOwnPage} />
+        <Route exact path='/Account/GiftRegistry' component={GiftRegistryPage} />
+        <Route exact path='/Account/MySavedBillingInforrmation' component={MySavedBillingInforrmationPage} />
         <Route exact path='/About' component={About} />
         <Route exact path='/Cart' component={Cart} />
         <Route exact path='/Purchase' component={Purchase} />

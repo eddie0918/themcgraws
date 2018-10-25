@@ -46,7 +46,8 @@ export default class UpdateAccountPage extends React.Component {
   render() {
     const { register, submitted } = this.state;
     return (
-      <MainPage className='cart' title='Update My Account' history={this.props.history}>
+      <MainPage className='cart' title='Update My Account'>
+        <Link className="mt-4 btn-link position-absolute" to='/Account'>Back</Link>
         <MainSection className="container-fluid">
           <Row>
             <Col xs="12" md="3"></Col>

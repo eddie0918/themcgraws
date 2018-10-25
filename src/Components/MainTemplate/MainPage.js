@@ -4,14 +4,6 @@ import { Container, Row, Col, Button } from 'reactstrap';
 export default function MainPage(props) {
   return (
     <section {...props}>
-      {props.history &&
-        <p
-          className="text-primary m-3 small btn-link"
-          onClick={() => props.history.goBack()}
-        >
-          Back
-        </p>
-      }
       <Container>
         <Row>
           <Col xs="12" className="justify-content-center text-center mt-4 mb-2">
