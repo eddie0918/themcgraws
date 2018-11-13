@@ -230,7 +230,11 @@ a.dropdown-toggle.nav-link a {
 #deliveryMethodSelect,
 #cardAmountSelect,
 #occasionSelect,
-#layoutSelect {
+#layoutSelect,
+#billingState,
+#cardType,
+#expirationMonth,
+#expirationYear {
     z-index: 4;
 }
 
